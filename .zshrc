@@ -138,9 +138,6 @@ eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/.config/git-flow-completion.zsh
-source /home/jarias/.local/bin/aws_zsh_completer.sh
-
 # =============
 #    PROMPT
 # =============
@@ -150,13 +147,9 @@ autoload -U promptinit
 promptinit
 prompt pure
 
-export VIRTUALENVWRAPPER_SCRIPT=~/.local/bin/virtualenvwrapper.sh
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source ~/.local/bin/virtualenvwrapper_lazy.sh
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/jarias/.sdkman"
-[[ -s "/home/jarias/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jarias/.sdkman/bin/sdkman-init.sh"
+#export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#
+##THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+#export SDKMAN_DIR="/home/jarias/.sdkman"
+#[[ -s "/home/jarias/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jarias/.sdkman/bin/sdkman-init.sh"
