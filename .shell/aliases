@@ -1,0 +1,110 @@
+alias vim=nvim
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias vew='source ~/.local/bin/virtualenvwrapper.sh'
+
+alias k='kubectl'
+
+alias kgp='kubectl get pod'
+
+alias kdp='kubectl describe pod'
+
+alias kgs='kubectl get svc'
+
+alias kds='kubectl describe svc'
+
+alias kgi='kubectl get ingress'
+
+alias kdi='kubectl describe ingress'
+
+alias kl='kubectl logs'
+
+alias tf='terraform'
+
+alias kctx='k ctx'
+
+alias kns='k ns'
+
+alias tfp='terraform plan -out plan.out'
+
+alias tfa='terraform apply plan.out'
+
+alias www='python2 -m SimpleHTTPServer 8000'
+
+alias ipe='curl ipinfo.io/ip'
+
+alias timestamp='date +%s'
+
+alias pip=pip3
+
+function randp() {
+  < /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-32} | tr -d '\n'
+}
+
+alias o='xdg-open'
+# Docker
+function dc() {
+    docker rm $(docker ps -aq)
+}
+
+function dci() {
+    docker rmi $(docker images -q -f dangling=true)
+}
+
+# Git Smart
+alias gup='git smart-pull'
+alias gm='git smart-merge'
+alias gl='git smart-log'
+
+#Git
+alias gp='git push -u'
+
+# Utility
+alias reload='source ~/.zshrc'
+
+# Quicker cd
+alias ..='cd ..'
+
+alias ls='ls -G --color=auto'
+# Common -- Some are from Damian Conway
+alias a='ls -A' # -A all except literal . ..
+alias la='ls -A -l -G'
+alias c='clear'
+alias cdd='cd -'  # goto last dir cd'ed from
+alias cl='clear; l'
+function cdc() {
+    cd $1; ls
+}
+alias cls='clear; ls'
+alias h='history'
+alias l.='ls -d .[^.]*'
+alias l='ls -lhGt'  # -l long listing, most recent first
+alias ll='ls -lh'
+alias lt='ls -lt' # sort with recently modified first
+alias md='mkdir -p'
+alias s='cd ..'   # up one dir
+
+function take() {
+    mkdir -p '$1'
+    cd '$1'
+}
+
+alias e='exit'
+alias k9='killall -9'
+function killnamed () {
+	ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill
+}
+
+function zipr() {
+	zip -r $1.zip $1
+}
+
+# Processes
+alias tu='top -o cpu' # cpu
+alias tm='top -o vsize' # memory
+
+# Greatminds
+alias psql-assessments-dev='psql -h dev-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
+alias psql-assessments-stage='psql -h stage-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
+alias psql-assessments-prod='psql -h prod-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
