@@ -14,11 +14,6 @@ if [ $os = "Linux" ]; then
   export LSCOLORS=$LS_COLORS
 fi
 
-if [ $os = "Linux" ] || [ $os = "FreeBSD" ]; then
-  BASE16_SHELL=$HOME/.config/base16-shell/
-  [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-fi
-
 export CLICOLOR=1
 
 # =============
@@ -129,6 +124,9 @@ bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 bindkey "\e[3~" delete-char
 
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+
 # ===================
 #    Other
 # ===================
@@ -153,3 +151,6 @@ export SDKMAN_DIR="/home/jarias/.sdkman"
 
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper_lazy.sh
