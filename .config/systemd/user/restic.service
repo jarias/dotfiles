@@ -3,5 +3,5 @@ Description=Restic backup
 
 [Service]
 Type=oneshot
-ExecStart=restic backup --verbose %h
+ExecStart=/usr/bin/restic backup --verbose %h
 EnvironmentFile=%h/.config/restic

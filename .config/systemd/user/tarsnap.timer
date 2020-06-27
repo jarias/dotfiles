@@ -1,9 +1,9 @@
-
 [Unit]
-Description=Tarsnap Backups Timer
+Description=Tarsnap hourly backups
 
 [Timer]
-OnCalendar=*-*-* *:00:00
+OnCalendar=hourly
+Persistent=true
 
 [Install]
 WantedBy=timers.target

@@ -1,5 +1,5 @@
 [Unit]
-Description=Restic hourly backup
+Description=Restic hourly backups
 
 [Timer]
 OnCalendar=hourly

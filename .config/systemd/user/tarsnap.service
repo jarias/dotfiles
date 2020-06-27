@@ -1,6 +1,6 @@
 [Unit]
-Description=Tarsnap backups
+Description=Tarsnap backup
 
 [Service]
 Type=oneshot
-ExecStart=/home/jarias/.local/bin/tarsnap.sh
+ExecStart=%s/.local/bin/tarsnap.sh
