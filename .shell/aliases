@@ -2,8 +2,6 @@ alias vim=nvim
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-alias vew='source ~/.local/bin/virtualenvwrapper.sh'
-
 alias k='kubectl'
 
 alias kgp='kubectl get pod'
@@ -30,8 +28,6 @@ alias tfp='terraform plan -out plan.out'
 
 alias tfa='terraform apply plan.out'
 
-alias www='python2 -m SimpleHTTPServer 8000'
-
 alias ipe='curl ipinfo.io/ip'
 
 alias timestamp='date +%s'
@@ -43,6 +39,7 @@ function randp() {
 }
 
 alias o='xdg-open'
+
 # Docker
 function dc() {
     docker rm $(docker ps -aq)
@@ -92,19 +89,16 @@ function take() {
 
 alias e='exit'
 alias k9='killall -9'
+
 function killnamed () {
 	ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill
 }
 
-function zipr() {
-	zip -r $1.zip $1
-}
-
 # Processes
-alias tu='top -o cpu' # cpu
-alias tm='top -o vsize' # memory
+alias tu='top -o %CPU'
+alias tm='top -o %MEM'
 
 # Greatminds
-alias psql-assessments-dev='psql -h dev-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
-alias psql-assessments-stage='psql -h stage-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
-alias psql-assessments-prod='psql -h prod-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
+alias psql-assessments-dev='psql -h dev-dp-assessments.cluster-cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
+alias psql-assessments-stage='psql -h stage-dp-assessments.cluster-cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
+alias psql-assessments-prod='psql -h prod-dp-assessments.cluster.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
