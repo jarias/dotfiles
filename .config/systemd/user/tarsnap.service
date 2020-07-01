@@ -3,4 +3,4 @@ Description=Tarsnap backup
 
 [Service]
 Type=oneshot
-ExecStart=%s/.local/bin/tarsnap.sh
+ExecStart=%h/.local/bin/tarsnap.sh
