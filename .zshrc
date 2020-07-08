@@ -154,3 +154,5 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper_lazy.sh
+
+source <(kubectl completion zsh)
