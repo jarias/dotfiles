@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'
@@ -34,6 +35,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pedrohdz/vim-yaml-folds'
 Plug 'pearofducks/ansible-vim'
+Plug 'LnL7/vim-nix'
 
 call plug#end()
 

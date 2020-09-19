@@ -1,3 +1,5 @@
+if [ -e /home/jarias/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jarias/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 setopt HIST_IGNORE_ALL_DUPS
 
 [[ -s $HOME/.shell/aliases ]] && source $HOME/.shell/aliases
@@ -144,10 +146,6 @@ fpath=( $HOME/.zfunctions $fpath )
 autoload -U promptinit
 promptinit
 prompt pure
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/jarias/.sdkman"
-[[ -s "/home/jarias/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jarias/.sdkman/bin/sdkman-init.sh"
 
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null

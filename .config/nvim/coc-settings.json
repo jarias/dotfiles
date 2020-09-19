@@ -5,8 +5,17 @@
     "typescript",
     "javascript",
     "go",
-    "json"
+    "json",
+    "svelte"
   ],
-  "python.jediEnabled": false,
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  }
 }
