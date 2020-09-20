@@ -36,8 +36,8 @@ if (xrandr | grep "HDMI1 disconnected"); then
   xlayoutdisplay --dpi 200 -p eDP1
   echo "rofi.dpi: 200" | xrdb -merge
 else
-  xlayoutdisplay -p HDMI1 -o HDMI1 -o eDP1
-  xrandr --output eDP1 --scale 0.5x0.5
+  xlayoutdisplay -p HDMI1 -o HDMI1
+  xrandr --output eDP1 --off
 fi
 
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
