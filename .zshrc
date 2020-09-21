@@ -139,15 +139,6 @@ eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# =============
-#    PROMPT
-# =============
-#fpath=( $HOME/.zfunctions $fpath )
-#
-#autoload -U promptinit
-#promptinit
-#prompt pure
-
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
