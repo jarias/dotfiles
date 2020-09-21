@@ -1,4 +1,5 @@
 if [ -e /home/jarias/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jarias/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /home/jarias/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then . /home/jarias/.nix-profile/etc/profile.d/hm-session-vars.sh; fi
 
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -141,11 +142,11 @@ eval "$(direnv hook zsh)"
 # =============
 #    PROMPT
 # =============
-fpath=( $HOME/.zfunctions $fpath )
-
-autoload -U promptinit
-promptinit
-prompt pure
+#fpath=( $HOME/.zfunctions $fpath )
+#
+#autoload -U promptinit
+#promptinit
+#prompt pure
 
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
@@ -154,3 +155,5 @@ export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper_lazy.sh
 
 source <(kubectl completion zsh)
+
+eval "$(starship init zsh)"
