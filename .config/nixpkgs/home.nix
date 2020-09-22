@@ -23,6 +23,7 @@
     kubectl
     istioctl
     direnv
+    nodejs
   ];
 
   programs.jq.enable = true;
