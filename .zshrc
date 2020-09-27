@@ -4,8 +4,6 @@ if [ -e /home/jarias/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then . /ho
 setopt HIST_IGNORE_ALL_DUPS
 
 [[ -s $HOME/.shell/aliases ]] && source $HOME/.shell/aliases
-[[ -s $HOME/.shell/paths ]] && source $HOME/.shell/paths
-[[ -s $HOME/.shell/config ]] && source $HOME/.shell/config
 [[ -s $HOME/.shell/history-substring-search.zsh ]] && source $HOME/.shell/history-substring-search.zsh
 
 os=$(uname -s)
