@@ -6,3 +6,6 @@ disabled = true
 
 [terraform]
 disabled = true
+
+[nix_shell]
+disabled = true
