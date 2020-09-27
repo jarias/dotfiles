@@ -24,6 +24,10 @@
     istioctl
     direnv
     nodejs
+    pgloader
+    silver-searcher
+    poetry
+    jdk14
   ];
 
   programs.jq.enable = true;
@@ -147,7 +151,7 @@
     enable = true;
     theme = {
       package = pkgs.arc-theme;
-      name = "Arc-Darker";
+      name = "Dracula";
     };
     iconTheme = {
       package = pkgs.papirus-icon-theme;
@@ -179,5 +183,4 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "20.09";
-
 }
