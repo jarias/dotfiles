@@ -1,0 +1,62 @@
+[alias]
+  ammend = "commit --amend -C HEAD"
+  cm = "commit"
+  co = "checkout"
+  credit = "commit --amend --author \"$1 <$2>\" -C HEAD"
+  current-branch = "!git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
+  l = "log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'"
+  lol = "log --pretty=oneline --abbrev-commit --graph --decorate"
+  st = "status -sb"
+  staged = "diff --cached"
+  track = "checkout -t"
+  undo = "reset --soft HEAD^"
+  unstage = "reset HEAD"
+  unstaged = "diff"
+
+[apply]
+  whitespace = "nowarn"
+
+[color]
+  branch = "auto"
+  diff = "auto"
+  status = "auto"
+  ui = true
+
+[core]
+  autocrlf = "input"
+  editor = "nvim"
+
+[credential]
+  helper = "cache"
+
+[diff "ansible-vault"]
+  cachetextconv = false
+  textconv = "ansible-vault view"
+
+[filter "lfs"]
+  clean = "git-lfs clean %f"
+  required = true
+  smudge = "git-lfs smudge %f"
+
+[filter "media"]
+  clean = "git-media-clean %f"
+  smudge = "git-media-smudge %f"
+
+[help]
+  autocorrect = 1
+
+[push]
+  default = "current"
+
+[status]
+  submodule = 1
+
+[user]
+  email = "jarias@users.noreply.github.com"
+  name = "Julio Arias"
+[trim]
+	protected = master,develop
+	bases = develop,master
+[init]
+	defaultBranch = main
+

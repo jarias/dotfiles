@@ -1,0 +1,5 @@
+require 'plugins'
+require 'settings'
+require 'statusline'
+require 'maps'
+require 'config'
