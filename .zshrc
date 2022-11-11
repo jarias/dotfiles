@@ -35,6 +35,7 @@ setopt HIST_IGNORE_SPACE
 unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
+unsetopt COMPLETE_ALIASES
 
 GPG_TTY="$(tty)"
 export GPG_TTY
