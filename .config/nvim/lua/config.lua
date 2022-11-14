@@ -133,6 +133,8 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
+require('lspconfig').texlab.setup {}
+
 require('lspconfig').jsonls.setup {}
 
 require('lspconfig').tsserver.setup {
