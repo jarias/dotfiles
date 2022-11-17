@@ -6,6 +6,7 @@ lxsession &
 xss-lock /usr/bin/slock &
 xautolock -time 10 -locker '/usr/bin/loginctl lock-session $XDG_SESSION_ID' -detectsleep &
 picom &
+dunst &
 
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
 autorandr -c

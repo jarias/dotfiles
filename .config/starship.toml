@@ -9,3 +9,9 @@ disabled = true
 
 [terraform]
 disabled = true
+
+[c]
+disabled = true
+
+[vagrant]
+disabled = true
