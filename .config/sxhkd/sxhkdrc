@@ -136,19 +136,19 @@ super + {Left,Down,Up,Right}
 
 # toggle mute
 XF86AudioMute
-  pactl set-sink-mute 0 toggle
+  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 XF86AudioRaiseVolume
-  pactl set-sink-volume 0 +5%
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 
 XF86AudioLowerVolume
-  pactl set-sink-volume 0 -5%
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
 XF86AudioPlay
-  pactl set-source-mute 0 toggle
+  wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 XF86AudioNext
-  pactl set-source-volume 0 +5%
+  wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+
 
 XF86AudioPrev
-  pactl set-source-volume 0 -5%
+  wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-
