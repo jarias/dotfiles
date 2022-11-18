@@ -10,7 +10,7 @@ dunst &
 
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
 autorandr -c
-feh --bg-fill ~/Pictures/wallpaper.jpg ~/Pictures/wp4181214.jpg
+feh --bg-fill ~/Pictures/wallpaper_2.jpg ~/Pictures/wallpaper_1.jpg
 
 bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7
 bspc monitor DisplayPort-0 -d 8
