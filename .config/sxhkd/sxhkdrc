@@ -152,3 +152,6 @@ XF86AudioNext
 
 XF86AudioPrev
   ~/.local/bin/volume-set.sh micdown
+
+F12
+  ~/.local/bin/change-audio-output.sh
