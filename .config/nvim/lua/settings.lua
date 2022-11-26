@@ -1,6 +1,4 @@
-local g = vim.g
-local cmd = vim.cmd
-local o, wo, bo, opt= vim.o, vim.wo, vim.bo, vim.opt
+local o, wo, opt= vim.o, vim.wo, vim.opt
 
 vim.cmd('syntax on')
 vim.cmd('colorscheme dracula')
@@ -18,7 +16,7 @@ o.shiftwidth=2
 o.expandtab=true
 o.list=true
 o.swapfile=false
-o.completeopt='noinsert,noselect'
+o.completeopt='menu,menuone,noselect'
 o.hlsearch=true
 o.ignorecase=true
 o.smartcase=true
