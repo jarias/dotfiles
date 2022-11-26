@@ -35,7 +35,7 @@ setopt HIST_IGNORE_SPACE
 unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
-unsetopt COMPLETE_ALIASES
+#unsetopt COMPLETE_ALIASES
 
 GPG_TTY="$(tty)"
 export GPG_TTY
@@ -154,3 +154,5 @@ alias vimdiff='nvim -d'
 export PATH="$HOME/.amplify/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+compdef dotfiles=git
