@@ -5,7 +5,6 @@ bindkey -v
 
 CDPATH="$HOME/Projects"
 
-
 path+="$HOME/.zsh/plugins/zsh-history-substring-search"
 fpath+="$HOME/.zsh/plugins/zsh-history-substring-search"
 
@@ -17,13 +16,13 @@ autoload -U compinit && compinit
 # Environment variables
 export EDITOR="vim"
 export PATH="$PATH:$HOME/.poetry/bin:$HOME/.local/bin:$HOME/.cargo/bin"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 if [ -f "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh" ]; then
   source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
 fi
 
-# History options should be set in .zshrc and after oh-my-zsh sourcing.
-# See https://github.com/nix-community/home-manager/issues/177.
 HISTSIZE="10000"
 SAVEHIST="10000"
 HISTFILE="$HOME/.zsh_history"
@@ -40,6 +39,7 @@ unsetopt EXTENDED_HISTORY
 GPG_TTY="$(tty)"
 export GPG_TTY
 gpg-connect-agent updatestartuptty /bye > /dev/null
+
 if [ -z "$INSIDE_EMACS" ]; then
   eval "$(/usr/bin/starship init zsh)"
 fi
@@ -148,11 +148,5 @@ alias tfa='terraform apply plan.out'
 alias tfp='terraform plan -out plan.out'
 alias timestamp='date +%s'
 alias vimdiff='nvim -d'
-
-
-# Added by Amplify CLI binary installer
-export PATH="$HOME/.amplify/bin:$PATH"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 compdef dotfiles=git
