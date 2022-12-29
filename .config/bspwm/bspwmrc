@@ -3,14 +3,13 @@
 pgrep -x sxhkd >/dev/null || sxhkd &
 
 lxsession &
-xss-lock /usr/bin/slock &
-xautolock -time 10 -locker '/usr/bin/loginctl lock-session $XDG_SESSION_ID' -detectsleep &
+#xss-lock /usr/bin/slock &
+xautolock -time 10 -locker '/usr/bin/slock' -detectsleep &
 picom &
 dunst &
 xrdb -q
 
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
-autorandr -c
 feh --bg-fill ~/Pictures/wallpaper_2.jpg ~/Pictures/wallpaper_1.jpg
 
 bspc monitor DisplayPort-0 -d 1 2 3 4 5 6 7
@@ -23,10 +22,22 @@ bspc config split_ratio 0.52
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 
+bspc rule -a "firefox:*:Picture-in-Picture" sticky=on state=floating
+
 STEAM_APPS=$(ls ~/.steam/steam/steamapps | grep appmanifest | sed 's/[^0-9]*//g')
 
 for app in $STEAM_APPS; do
   bspc rule -a "steam_app_$app:*:*" desktop="7" state=fullscreen follow=on
 done
 
-~/.local/bin/bar.sh
+if type "xrandr"; then
+  primary_monitor=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
+  MONITOR=$primary_monitor polybar --reload main &
+
+  for m in $(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload secondary &
+  done
+else
+  polybar --reload main &
+  polybar --reload secondary &
+fi
