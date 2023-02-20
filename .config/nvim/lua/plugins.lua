@@ -31,4 +31,8 @@ return require('packer').startup(function()
   use 'Lokaltog/vim-easymotion'
   use 'mileszs/ack.vim'
   use 'z0mbix/vim-shfmt'
+  use 'preservim/vim-markdown'
+  use 'godlygeek/tabular'
+  use 'junegunn/goyo.vim'
+  use 'habamax/vim-asciidoctor'
 end)
