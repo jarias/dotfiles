@@ -110,7 +110,6 @@ function randp() {
 
 # Aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias podman='sudo podman'
 alias docker='podman'
 alias ..='cd ..'
 alias a='ls -A'
