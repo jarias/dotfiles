@@ -18,6 +18,8 @@ export EDITOR="vim"
 export PATH="$PATH:$HOME/.poetry/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$HOME/.dotnet:$PATH"
 
 if [ -f "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh" ]; then
   source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
