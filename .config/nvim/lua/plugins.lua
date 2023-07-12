@@ -1,9 +1,15 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
   use 'wbthomason/packer.nvim'
   use 'Mofiqul/dracula.nvim'
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'

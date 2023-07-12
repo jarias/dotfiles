@@ -1,4 +1,4 @@
-local bo, wo, o, opt = vim.bo, vim.wo, vim.o, vim.opt
+local bo, wo, o, opt, g = vim.bo, vim.wo, vim.o, vim.opt, vim.g
 
 vim.cmd('syntax on')
 vim.cmd('colorscheme dracula')
@@ -36,3 +36,5 @@ wo.linebreak = true
 opt.listchars = { tab = '▸\\', eol = '¬', trail = '.', extends = '>', precedes = '<' }
 
 bo.formatoptions = "tcqr"
+
+-- g.node_host_prog = vim.call("system", 'volta which neovim-node-host | tr -d "\n"')
