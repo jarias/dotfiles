@@ -14,7 +14,7 @@ super + shift + p
   rofi-pass
 
 super + shift + e
-  rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu -theme themes/powermenu.rasi
+  rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu
 
 # make sxhkd reload its configuration files:
 super + Escape

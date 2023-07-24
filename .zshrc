@@ -20,6 +20,7 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.dotnet:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 if [ -f "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh" ]; then
   source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
@@ -36,7 +37,6 @@ setopt HIST_IGNORE_SPACE
 unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
-#unsetopt COMPLETE_ALIASES
 
 GPG_TTY="$(tty)"
 export GPG_TTY
@@ -127,7 +127,7 @@ alias gup='git pull --rebase'
 alias h='history'
 alias ipe='curl ipinfo.io/ip'
 alias k='kubectl'
-alias kctx='kubectx'
+alias kctx='kubectl ctx'
 alias kdi='kubectl describe ingress'
 alias kdp='kubectl describe pod'
 alias kds='kubectl describe svc'
@@ -135,7 +135,7 @@ alias kgi='kubectl get ingress'
 alias kgp='kubectl get pod'
 alias kgs='kubectl get svc'
 alias kl='kubectl logs'
-alias kns='kubens'
+alias kns='kubectl ns'
 alias l='ls -lhGt'
 alias l.='ls -d .[^.]*'
 alias la='ls -A -l -G'

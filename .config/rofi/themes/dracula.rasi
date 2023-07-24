@@ -1,12 +1,12 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 * {
-    font: "Fira Code 15";
-    text-color: #f8f8f2;
+    font: "Cascadia Code 15";
     foreground: #f8f8f2;
     background-color: #282a36;
     active-background: #6272a4;
     urgent-background: #ff5555;
+    urgent-foreground: #282a36;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
@@ -14,31 +14,34 @@
     bordercolor: @active-background;
 }
 
-#window {
-    border:           1;
-    border-radius: 6;
-    border-color: @bordercolor;
-    padding:          5;
+configuration {
+    show-icons:      true;
+    display-drun:    "";
+    disable-history: false;
 }
 
+#window {
+    background-color: @background-color;
+    border:           3;
+    border-radius:    6;
+    border-color:     @bordercolor;
+    padding:          15;
+}
 #mainbox {
     border:  0;
     padding: 0;
 }
-
 #message {
-    border:       1px dash 0px 0px ;
+    border:       0px;
     border-color: @separatorcolor;
-    padding:      1px ;
+    padding:      1px;
 }
-
 #textbox {
     text-color: @foreground;
 }
-
 #listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    border:       0px;
     border-color: @bordercolor;
     spacing:      2px ;
     scrollbar:    false;
@@ -46,13 +49,15 @@
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 3px ;
 }
 #element.normal.normal {
+    background-color: @background-color;
     text-color:       @foreground;
 }
 #element.normal.urgent {
     background-color: @urgent-background;
+    text-color:       @urgent-foreground;
 }
 #element.normal.active {
     background-color: @active-background;
@@ -71,6 +76,7 @@
     text-color:       @foreground;
 }
 #element.alternate.normal {
+    background-color: @background-color;
     text-color:       @foreground;
 }
 #element.alternate.urgent {
@@ -117,8 +123,12 @@
 }
 #textbox-prompt-colon {
     expand:     false;
-    str:        ":";
+    str:        ">";
     margin:     0px 0.3em 0em 0em ;
     text-color: @foreground;
+}
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
 }
 

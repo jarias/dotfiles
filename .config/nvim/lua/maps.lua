@@ -1,3 +1,5 @@
+local builtin = require('telescope.builtin')
+
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
@@ -6,9 +8,10 @@ vim.g.mapleader = ','
 
 map('n', '<leader>n', ':NERDTreeToggle<cr>', opts)
 
-map('n', '<leader>b', "<cmd>Telescope buffers<cr>", opts)
-map('n', '<leader>f', "<cmd>Telescope find_files<cr>", opts)
-map('n', '<leader>g', "<cmd>Telescope live_grep<cr>", opts)
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 map('x', 'ga', '<Plug>(EasyAlign)', opts)
 map('n', 'ga', '<Plug>(EasyAlign)', opts)

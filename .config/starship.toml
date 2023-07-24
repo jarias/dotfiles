@@ -1,20 +1,14 @@
-[aws]
-disabled = true
-
-[package]
-disabled = true
-
-[python]
-disabled = true
-
-[terraform]
-disabled = true
-
-[c]
-disabled = true
-
-[vagrant]
-disabled = true
-
-[nodejs]
-disabled = true
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$cmd_duration\
+$line_break\
+$jobs\
+$status\
+$character"""
