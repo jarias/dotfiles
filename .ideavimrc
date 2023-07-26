@@ -1,0 +1,6 @@
+let mapleader = ","
+
+map <leader>fc <Action>(GotoClass)
+map <leader>ff <Action>(GotoFile)
+
+map <leader>rr <Action>(ReformatCode)
