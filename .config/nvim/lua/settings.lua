@@ -29,6 +29,7 @@ o.showbreak = "↳"
 o.breakindent = true
 o.breakindentopt = "min:20,shift:2"
 o.whichwrap = "<,>,h,l,[,]"
+o.backupcopy = "no"
 
 wo.wrap = true
 wo.linebreak = true
