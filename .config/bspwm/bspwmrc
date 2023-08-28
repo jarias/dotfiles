@@ -1,5 +1,29 @@
 #!/bin/bash
 
+xrandr \
+	--output DisplayPort-0 \
+	--primary \
+	--mode 1920x1080 \
+	--rate 120.00 \
+	--pos 1080x0 \
+	--rotate normal \
+	--output DisplayPort-1 \
+	--off \
+	--output DisplayPort-2 \
+	--off \
+	--output HDMI-A-0 \
+	--mode 1920x1080 \
+	--pos 0x0 \
+	--rotate left \
+	--output HDMI-A-1-1 \
+	--off \
+	--output DisplayPort-1-3 \
+	--off \
+	--output DisplayPort-1-4 \
+	--off \
+	--output DisplayPort-1-5 \
+	--off
+
 feh --bg-fill ~/Pictures/wallpaper_2.jpg ~/Pictures/wallpaper_1.jpg
 
 primary_monitor=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
@@ -19,12 +43,12 @@ setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
 
 # Bspwm config
 
-bspc monitor $primary_monitor -d 1 2 3 4 5 6 7
+bspc monitor "$primary_monitor" -d 1 2 3 4 5 6 7
 
 workspace=8
 for m in $(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1); do
-  bspc monitor $m -d $workspace
-  ((workspace++))
+	bspc monitor "$m" -d "$workspace"
+	((workspace++))
 done
 
 bspc config border_width 1
@@ -41,12 +65,12 @@ bspc rule -a "firefox:*:Picture-in-Picture" sticky=on state=floating
 STEAM_APPS=$(ls ~/.steam/steam/steamapps | grep appmanifest | sed 's/[^0-9]*//g')
 
 for app in $STEAM_APPS; do
-  bspc rule -a "steam_app_$app:*:*" desktop="7" state=fullscreen follow=on
+	bspc rule -a "steam_app_$app:*:*" desktop="7" state=fullscreen follow=on
 done
 
 # Polybar
 
 MONITOR=$primary_monitor polybar --reload main &
 for m in $(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1); do
-  MONITOR=$m polybar --reload secondary &
+	MONITOR=$m polybar --reload secondary &
 done
