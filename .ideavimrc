@@ -4,3 +4,12 @@ map <leader>fc <Action>(GotoClass)
 map <leader>ff <Action>(GotoFile)
 
 map <leader>rr <Action>(ReformatCode)
+
+map <leader>rn <Action>(RenameElement)
+
+map <leader>g <Action>(Generate)
+
+map <leader>im <Action>(ImplementMethods)
+map <leader>om <Action>(OverrideMethods)
+
+map <leader>sr <Action>(SurroundWith)
