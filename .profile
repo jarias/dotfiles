@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 export _JAVA_AWT_WM_NONREPARENTING=1
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 

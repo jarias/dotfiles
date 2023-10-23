@@ -1,5 +1,9 @@
 local plugins = {
   {
+    "tpope/vim-surround",
+    lazy = false,
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
@@ -15,7 +19,7 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "html", "css", "bash", "terraform", "go", "java", "kotlin", "json", "sql" },
+      ensure_installed = { "html", "css", "bash", "terraform", "go", "java", "kotlin", "json", "sql", "rust" },
     },
   },
   {
@@ -29,6 +33,9 @@ local plugins = {
         "shellcheck",
         "prettier",
         "sqlfmt",
+        "gopls",
+        "goimports",
+        "rust-analyzer",
       },
     },
   },

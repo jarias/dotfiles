@@ -9,6 +9,8 @@ local sources = {
   formatting.terraform_fmt,
   formatting.shfmt,
   formatting.sqlfmt,
+  formatting.goimports,
+  formatting.rustfmt,
 
   lint.shellcheck,
 }

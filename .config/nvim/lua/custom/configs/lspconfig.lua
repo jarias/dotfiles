@@ -9,3 +9,15 @@ lspconfig.terraformls.setup {
   capabilities = capabilities,
   filetypes = { "terraform" },
 }
+
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "go" },
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "rust" },
+}
