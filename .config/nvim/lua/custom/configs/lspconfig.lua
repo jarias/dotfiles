@@ -21,3 +21,9 @@ lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
   filetypes = { "rust" },
 }
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "javascript", "typescript" },
+}

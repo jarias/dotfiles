@@ -19,7 +19,19 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "html", "css", "bash", "terraform", "go", "java", "kotlin", "json", "sql", "rust" },
+      ensure_installed = {
+        "html",
+        "css",
+        "bash",
+        "terraform",
+        "go",
+        "java",
+        "kotlin",
+        "json",
+        "sql",
+        "rust",
+        "javascript",
+      },
     },
   },
   {

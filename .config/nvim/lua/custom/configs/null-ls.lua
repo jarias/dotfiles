@@ -13,6 +13,7 @@ local sources = {
   formatting.rustfmt,
 
   lint.shellcheck,
+  lint.eslint,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
