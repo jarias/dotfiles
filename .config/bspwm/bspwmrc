@@ -61,11 +61,11 @@ bspc config gapless_monocle true
 
 bspc rule -a "firefox:*:Picture-in-Picture" sticky=on state=floating
 
-STEAM_APPS=$(ls ~/.steam/steam/steamapps | grep appmanifest | sed 's/[^0-9]*//g')
-
-for app in $STEAM_APPS; do
-	bspc rule -a "steam_app_$app:*:*" desktop="7" state=fullscreen follow=on
-done
+#STEAM_APPS=$(ls ~/.steam/steam/steamapps | grep appmanifest | sed 's/[^0-9]*//g')
+#
+#for app in $STEAM_APPS; do
+#	bspc rule -a "steam_app_$app:*:*" desktop="7" state=fullscreen follow=on
+#done
 
 # Polybar
 
