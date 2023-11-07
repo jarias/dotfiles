@@ -11,7 +11,7 @@ fpath+="$HOME/.zsh/plugins/zsh-history-substring-search"
 # Oh-My-Zsh/Prezto calls compinit during initialization,
 # calling it twice causes sight start up slowdown
 # as all $fpath entries will be traversed again.
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 
 # Environment variables
 export EDITOR="vim"
@@ -150,4 +150,11 @@ alias tfp='terraform plan -out plan.out'
 alias timestamp='date +%s'
 alias vimdiff='nvim -d'
 
-compdef dotfiles=git
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 2 ]; then
+  export MOZ_ENABLE_WAYLAND=1
+  export QT_QPA_PLATFORM=wayland
+  export SDL_VIDEODRIVER=wayland
+  export XDG_SESSION_TYPE=wayland
+  export XDG_CURRENT_DESKTOP=sway
+  exec sway
+fi
