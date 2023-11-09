@@ -164,7 +164,7 @@ if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   export OBS_USE_EGL=1
   export QT_QPA_PLATFORMTHEME=qt5ct
 
-  if [ "$hostname" == "elara" ]; then
+  if [ "$hostname" = "elara" ]; then
     exec sway --unsupported-gpu
   else 
     exec sway
