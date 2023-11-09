@@ -20,10 +20,6 @@ set $term kitty
 # on the original workspace that the command was run on.
 set $menu tofi-drun | xargs swaymsg exec --
 
-output DP-1 resolution 1920x1080 position 1080 0
-
-output HDMI-A-1 transform 270 position 0 0
-
 ### Key bindings
 #
 # Basics:
@@ -219,7 +215,7 @@ exec swayidle -w \
 	timeout 1805 'swaymsg "output * power off"' \
 	resume 'swaymsg "output * power on"'
 
-exec_always xrandr --output DP-1 --primary
+exec_always ~/.local/bin/sway-outputs
 
 client.focused "#8BE9FD" "#8BE9FD" "#ffffff" "#8BE9FD"
 

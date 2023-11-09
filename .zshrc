@@ -151,6 +151,8 @@ alias tfp='terraform plan -out plan.out'
 alias timestamp='date +%s'
 alias vimdiff='nvim -d'
 
+hostname=$(hostnamectl hostname)
+
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   export MOZ_ENABLE_WAYLAND=1
   export QT_QPA_PLATFORM=wayland
@@ -162,5 +164,9 @@ if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   export OBS_USE_EGL=1
   export QT_QPA_PLATFORMTHEME=qt5ct
 
-  exec sway
+  if [ "$hostname" == "elara" ]; then
+    exec sway --unsupported-gpu
+  else 
+    exec sway
+  fi
 fi
