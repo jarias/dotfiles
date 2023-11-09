@@ -18,18 +18,18 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show drun
+set $menu tofi-drun | xargs swaymsg exec --
 
-output DP-1 resolution 1920x1080 position 1080 0 bg ~/Pictures/wallpaper_2.jpg fill
+output DP-1 resolution 1920x1080 position 1080 0
 
-output HDMI-A-1 transform 270 position 0 0 bg ~/Pictures/wallpaper_1.jpg stretch
+output HDMI-A-1 transform 270 position 0 0
 
 ### Key bindings
 #
 # Basics:
 #
 
-    bindsym $mod+Shift+p exec ROFI_PASS_BACKEND=wtype ROFI_PASS_CLIPBOARD_BACKEND=wl-clipboard rofi-pass
+    bindsym $mod+Shift+p exec ~/.local/bin/passmenu --type
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -50,7 +50,7 @@ output HDMI-A-1 transform 270 position 0 0 bg ~/Pictures/wallpaper_1.jpg stretch
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu
+    bindsym $mod+Shift+e exec ~/.local/bin/powermenu
 #
 # Moving around:
 #
@@ -181,6 +181,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
 #
@@ -195,7 +196,7 @@ bar {
     swaybar_command waybar
 }
 
-default_border pixel
+default_border pixel 1
 focus_follows_mouse no
 gaps inner 5
 
@@ -205,12 +206,6 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'Dracula'
     gsettings set $gnome-schema icon-theme 'Papirus'
 }
-
-workspace 1 output DP-1
-workspace 2 output DP-1
-workspace 8 output HDMI-A-1
-
-exec_always systemctl --user start autostart.target
 
 for_window [app_id="flameshot"] floating enabled, fullscreen disabled, move absolute position 0 0, border pixel 0
 
@@ -224,5 +219,10 @@ exec swayidle -w \
 	timeout 1805 'swaymsg "output * power off"' \
 	resume 'swaymsg "output * power on"'
 
+exec_always xrandr --output DP-1 --primary
+
+client.focused "#8BE9FD" "#8BE9FD" "#ffffff" "#8BE9FD"
+
 include /etc/sway/config.d/*
 
+exec_always systemctl --user start autostart.target

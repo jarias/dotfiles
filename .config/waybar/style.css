@@ -5,11 +5,11 @@
   font-family:
     FontAwesome,
     Cascadia Code;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 window#waybar {
-  background-color: #181825;
+  background-color: #282a36;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -29,13 +29,13 @@ window#waybar.hidden {
   padding: 6px 18px;
   margin: 6px 3px;
   border-radius: 4px;
-  background-color: #1e1e2e;
+  background-color: #44475a;
   color: #cdd6f4;
 }
 
 #workspaces button.focused {
   color: #1e1e2e;
-  background-color: #cdd6f4;
+  background-color: #bd93f9;
 }
 
 #workspaces button:hover {
@@ -46,7 +46,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-  background-color: #f38ba8;
+  background-color: #ff5555;
 }
 
 #memory,
@@ -60,71 +60,16 @@ window#waybar.hidden {
   border-radius: 4px;
   margin: 6px 3px;
   padding: 6px 12px;
-  background-color: #1e1e2e;
+  background-color: #44475a;
   color: #181825;
-}
-
-#custom-power {
-  margin-right: 6px;
-}
-
-#custom-logo {
-  padding-right: 7px;
-  padding-left: 7px;
-  margin-left: 5px;
-  font-size: 15px;
-  border-radius: 8px 0px 0px 8px;
-  color: #1793d1;
-}
-
-#memory {
-  background-color: #fab387;
-}
-#battery {
-  background-color: #f38ba8;
-}
-@keyframes blink {
-  to {
-    background-color: #f38ba8;
-    color: #181825;
-  }
-}
-
-#battery.warning,
-#battery.critical,
-#battery.urgent {
-  background-color: #ff0048;
-  color: #181825;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-#battery.charging {
-  background-color: #a6e3a1;
-}
-
-#backlight {
-  background-color: #fab387;
 }
 
 #pulseaudio {
-  background-color: #f9e2af;
-}
-
-#network {
-  background-color: #94e2d5;
-  padding-right: 17px;
+  background-color: #ffb86c;
 }
 
 #clock {
-  font-family: JetBrainsMono Nerd Font;
-  background-color: #cba6f7;
-}
-
-#custom-power {
-  background-color: #f2cdcd;
+  background-color: #bd93f9;
 }
 
 tooltip {
