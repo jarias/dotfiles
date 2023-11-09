@@ -217,7 +217,7 @@ exec swayidle -w \
 
 exec_always ~/.local/bin/sway-outputs
 
-client.focused "#8BE9FD" "#8BE9FD" "#ffffff" "#8BE9FD"
+client.focused "#6272A4" "#6272A4" "#F8F8F2" "#282A36"
 
 include /etc/sway/config.d/*
 
