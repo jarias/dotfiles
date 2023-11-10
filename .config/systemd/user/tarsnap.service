@@ -1,0 +1,6 @@
+[Unit]
+Description=Tarsnap backups
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/tarsnap.sh %h
