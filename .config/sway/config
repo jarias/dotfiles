@@ -180,18 +180,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    swaybar_command waybar
-}
-
 default_border pixel 1
 focus_follows_mouse no
 gaps inner 5
@@ -217,8 +205,20 @@ exec swayidle -w \
 
 exec_always ~/.local/bin/sway-outputs
 
-client.focused "#6272A4" "#6272A4" "#F8F8F2" "#282A36"
+client.focused "#6272A4" "#6272A4" "#F8F8F2" "#6272A4"
 
 include /etc/sway/config.d/*
 
-exec_always systemctl --user start autostart.target
+
+exec ~/.local/bin/sway-session
+exec systemctl --user start sway-xdg-autostart.target
+
+workspace 1 output DP-1
+workspace 2 output DP-1
+workspace 3 output DP-1
+workspace 4 output DP-1
+workspace 5 output DP-1
+workspace 6 output DP-1
+workspace 8 output HDMI-A-1
+
+exec waybar

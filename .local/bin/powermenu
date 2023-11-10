@@ -1,0 +1,33 @@
+#!/bin/bash
+
+confirm() {
+	local command=$1
+	local yesno=" Yes\n No"
+
+	answer=$(echo -e "$yesno" | tofi | awk '{print tolower($2)}')
+	if [ "$answer" = "yes" ]; then
+		$command
+	fi
+}
+
+entries=" Shutdown\n Reboot\n Suspend\n Logout\n Lockscreen"
+
+selected=$(echo -e "$entries" | tofi | awk '{print tolower($2)}')
+
+case $selected in
+shutdown)
+	confirm "systemctl poweroff"
+	;;
+reboot)
+	confirm "systemctl reboot"
+	;;
+suspend)
+	systemctl suspend
+	;;
+logout)
+	confirm "sway exit"
+	;;
+lockscreen)
+	swaylock
+	;;
+esac

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+hostname=$(hostnamectl hostname)
+
+if [ "$hostname" == "fulcrum" ]; then
+	sway output DP-1 resolution 1920x1080 position 1080 0
+	sway output HDMI-A-1 transform 270 position 0 0
+	xrandr --output DP-1 --primary
+fi
+
+if [ "$hostname" == "elara" ]; then
+	sway output eDP-1 resolution 1920x1080 position 0 0
+	sway output HDMI-A-1 position 1920 0
+fi

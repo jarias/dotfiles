@@ -27,10 +27,11 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
+        "show-passive-items": true
     },
     "clock": {
-        "format": "{:%d/%m/%Y %r}"
+        "format": "{:%d/%m/%Y %I:%M %p}"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -59,5 +60,16 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "sway/workspaces": {
+        "persistent-workspaces": {
+            "1": ["DP-1"],
+            "2": ["DP-1"],
+            "3": ["DP-1"],
+            "4": ["DP-1"],
+            "5": ["DP-1"],
+            "6": ["DP-1"],
+            "8": ["HDMI-A-1"]
+        }
     }
 }

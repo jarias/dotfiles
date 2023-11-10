@@ -156,7 +156,7 @@ hostname=$(hostnamectl hostname)
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   export MOZ_ENABLE_WAYLAND=1
   export QT_QPA_PLATFORM=wayland
-  export SDL_VIDEODRIVER=wayland
+  #export SDL_VIDEODRIVER=wayland
   export XDG_SESSION_TYPE=wayland
   export XDG_CURRENT_DESKTOP=sway
   export _JAVA_AWT_WM_NONREPARENTING=1
