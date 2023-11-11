@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Address several issues with DBus activation and systemd user sessions
 #
@@ -39,10 +39,13 @@
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP="${XDG_SESSION_DESKTOP:-sway}"
 export XDG_SESSION_TYPE=wayland
-VARIABLES="DESKTOP_SESSION XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE"
+
+VARIABLES="XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE"
 VARIABLES="${VARIABLES} DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY"
+VARIABLES="${VARIABLES} MOZ_ENABLE_WAYLAND QT_QPA_PLATFORMTHEME QT_QPA_PLATFORM SSH_AUTH_SOCK OBS_USE_EGL _JAVA_AWT_WM_NONREPARENTING"
 SESSION_TARGET="sway-session.target"
 SESSION_SHUTDOWN_TARGET="sway-session-shutdown.target"
+XDG_AUTOSTART_TARGET="sway-xdg-autostart.target"
 WITH_CLEANUP=1
 
 print_usage() {
@@ -114,9 +117,12 @@ fi
 # reset failed state of all user units
 systemctl --user reset-failed
 
-# shellcheck disable=SC2086
-systemctl --user import-environment $VARIABLES
+systemctl --user import-environment
+
+~/.local/bin/wait-sni-ready
+
 systemctl --user start "$SESSION_TARGET"
+systemctl --user start "$XDG_AUTOSTART_TARGET"
 
 # Optionally, wait until the compositor exits and cleanup variables and services.
 if [ -z "$WITH_CLEANUP" ] ||

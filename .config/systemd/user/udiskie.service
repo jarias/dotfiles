@@ -1,6 +1,8 @@
 [Unit]
 Description=udiskie mount daemon
-PartOf=graphical-session.target
+PartOf=sway-session.target
+Requires=sway-session.target
+After=sway-session.target
 
 [Service]
 ExecStart=/usr/bin/udiskie -a -n -s

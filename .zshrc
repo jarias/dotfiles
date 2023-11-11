@@ -13,16 +13,6 @@ fpath+="$HOME/.zsh/plugins/zsh-history-substring-search"
 # as all $fpath entries will be traversed again.
 autoload -Uz compinit && compinit
 
-# Environment variables
-export EDITOR="vim"
-export PATH="$PATH:$HOME/.poetry/bin:$HOME/.local/bin:$HOME/.cargo/bin"
-export PATH="$PATH:/home/jarias/.local/share/JetBrains/Toolbox/scripts"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
-export PATH="$HOME/.dotnet:$PATH"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
 if [ -f "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh" ]; then
   source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
 fi
@@ -154,16 +144,6 @@ alias vimdiff='nvim -d'
 hostname=$(hostnamectl hostname)
 
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  export MOZ_ENABLE_WAYLAND=1
-  export QT_QPA_PLATFORM=wayland
-  #export SDL_VIDEODRIVER=wayland
-  export XDG_SESSION_TYPE=wayland
-  export XDG_CURRENT_DESKTOP=sway
-  export _JAVA_AWT_WM_NONREPARENTING=1
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-  export OBS_USE_EGL=1
-  export QT_QPA_PLATFORMTHEME=qt5ct
-
   if [ "$hostname" = "elara" ]; then
     exec sway --unsupported-gpu
   else 

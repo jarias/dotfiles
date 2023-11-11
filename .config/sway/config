@@ -207,11 +207,8 @@ exec_always ~/.local/bin/sway-outputs
 
 client.focused "#6272A4" "#6272A4" "#F8F8F2" "#6272A4"
 
-include /etc/sway/config.d/*
-
-
+exec waybar
 exec ~/.local/bin/sway-session
-exec systemctl --user start sway-xdg-autostart.target
 
 workspace 1 output DP-1
 workspace 2 output DP-1
@@ -221,4 +218,3 @@ workspace 5 output DP-1
 workspace 6 output DP-1
 workspace 8 output HDMI-A-1
 
-exec waybar

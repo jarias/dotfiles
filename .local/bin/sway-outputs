@@ -5,7 +5,7 @@ set -e
 hostname=$(hostnamectl hostname)
 
 if [ "$hostname" == "fulcrum" ]; then
-	sway output DP-1 resolution 1920x1080 position 1080 0
+	sway output DP-1 resolution 1920x1080 position 1080 0 bg ~/Pictures/wallpaper_main.jpg fill
 	sway output HDMI-A-1 transform 270 position 0 0
 	xrandr --output DP-1 --primary
 fi
