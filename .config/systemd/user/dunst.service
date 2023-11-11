@@ -1,0 +1,14 @@
+[Unit]
+Description=Dunst notification daemon
+PartOf=sway-session.target
+Requires=sway-session.target
+After=sway-session.target
+
+
+[Service]
+BusName=org.freedesktop.Notifications
+ExecStart=/usr/bin/dunst
+Type=dbus
+
+[Install]
+WantedBy=sway-session.target
