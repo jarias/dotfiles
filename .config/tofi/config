@@ -16,7 +16,7 @@
 	font = "Cascadia Code"
 
 	# Point size of text.
-	font-size = 22
+	font-size = 18
 
 	# Comma separated list of OpenType font feature settings to apply,
 	# if supported by the chosen font. The format is similar to the CSS
@@ -167,7 +167,7 @@
 ### Window theming
 #
 	# Width and height of the window. Can be pixels or a percentage.
-	width = 50%
+	width = 40%
 	height = 50%
 
 	# Window background color

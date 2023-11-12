@@ -36,9 +36,6 @@
 #  - https://www.freedesktop.org/software/systemd/man/systemd.special.html#graphical-session.target
 #  - https://systemd.io/DESKTOP_ENVIRONMENTS/
 #
-export XDG_CURRENT_DESKTOP=sway
-export XDG_SESSION_DESKTOP="${XDG_SESSION_DESKTOP:-sway}"
-export XDG_SESSION_TYPE=wayland
 
 VARIABLES="XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE"
 VARIABLES="${VARIABLES} DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY"
@@ -71,7 +68,7 @@ fi
 systemctl --user reset-failed
 
 # shellcheck disable=SC2086
-systemctl --user import-environment $VARIABLES
+systemctl --user import-environment
 
 ~/.local/bin/wait-sni-ready
 
