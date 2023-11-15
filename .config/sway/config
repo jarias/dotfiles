@@ -160,7 +160,7 @@ bindsym F12 exec ~/.local/bin/change-audio-output.sh
 # Screenshot:
 #
 
-bindsym Ctrl+Shift+4 exec flameshot gui
+bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/screenshots/screenshot-$(date +"%m-%d-%y-%r")
 
 #
 # Resizing containers:
@@ -200,6 +200,7 @@ exec_always {
 }
 
 for_window [app_id="flameshot"] floating enabled, fullscreen disabled, move absolute position 0 0, border pixel 0
+for_window [app_id="thunar" title="File Operation Progress"] floating enable
 
 input * {
     xkb_layout "us"
