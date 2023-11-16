@@ -201,6 +201,8 @@ exec_always {
 
 for_window [app_id="flameshot"] floating enabled, fullscreen disabled, move absolute position 0 0, border pixel 0
 for_window [app_id="thunar" title="File Operation Progress"] floating enable
+for_window [app_id="cemu" title="Title Manager"] floating enable
+for_window [title="WiiUDownloader - Downloading"] floating enable
 
 input * {
     xkb_layout "us"
