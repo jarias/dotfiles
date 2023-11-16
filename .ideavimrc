@@ -3,9 +3,9 @@ let mapleader = ","
 map <leader>fc <Action>(GotoClass)
 map <leader>ff <Action>(GotoFile)
 
-map <leader>rr <Action>(ReformatCode)
+map <leader>fm <Action>(ReformatCode)
 
-map <leader>rn <Action>(RenameElement)
+map <leader>ra <Action>(RenameElement)
 
 map <leader>g <Action>(Generate)
 
