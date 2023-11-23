@@ -1,5 +1,9 @@
 local plugins = {
   {
+    "junegunn/vim-easy-align",
+    lazy = false,
+  },
+  {
     "tpope/vim-surround",
     lazy = false,
   },
