@@ -203,6 +203,7 @@ for_window [app_id="flameshot"] floating enabled, fullscreen disabled, move abso
 for_window [app_id="thunar" title="File Operation Progress"] floating enable
 for_window [app_id="cemu" title="Title Manager"] floating enable
 for_window [title="WiiUDownloader - Downloading"] floating enable
+for_window [app_id=thunderbird title=".* Reminder"] floating enable
 
 input * {
     xkb_layout "us"
