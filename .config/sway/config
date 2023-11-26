@@ -204,6 +204,7 @@ for_window [app_id="thunar" title="File Operation Progress"] floating enable
 for_window [app_id="cemu" title="Title Manager"] floating enable
 for_window [title="WiiUDownloader - Downloading"] floating enable
 for_window [app_id=thunderbird title=".* Reminder"] floating enable
+for_window [class="steam_app*"] inhibit_idle focus
 
 input * {
     xkb_layout "us"
