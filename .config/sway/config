@@ -160,7 +160,7 @@ bindsym F12 exec ~/.local/bin/change-audio-output.sh
 # Screenshot:
 #
 
-bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/screenshots/screenshot-$(date +"%m-%d-%y-%r")
+bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/screenshots/screenshot-$(date +"%m-%d-%y-%I-%M").png
 
 #
 # Resizing containers:
@@ -205,6 +205,8 @@ for_window [app_id="cemu" title="Title Manager"] floating enable
 for_window [title="WiiUDownloader - Downloading"] floating enable
 for_window [app_id=thunderbird title=".* Reminder"] floating enable
 for_window [class="steam_app*"] inhibit_idle focus
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 640 px height 360 px, move position 1100 px 600 px, sticky on
+for_window [title=".*Huddle"] floating enable, sticky on
 
 input * {
     xkb_layout "us"
