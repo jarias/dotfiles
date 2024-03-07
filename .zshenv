@@ -7,7 +7,9 @@ export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.dotnet:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP="${XDG_SESSION_DESKTOP:-sway}"
