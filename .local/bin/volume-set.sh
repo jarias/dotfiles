@@ -31,10 +31,10 @@ function polybar_micvol() {
 
 case $1 in
 up)
-	wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
 	;;
 down)
-	wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 	;;
 mute)
 	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
@@ -49,10 +49,10 @@ vol)
 	done
 	;;
 micup)
-	wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+
+	wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+
 	;;
 micdown)
-	wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-
+	wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-
 	;;
 micmute)
 	wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle

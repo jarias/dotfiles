@@ -24,6 +24,7 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "templ",
         "html",
         "css",
         "bash",
@@ -35,6 +36,7 @@ local plugins = {
         "sql",
         "rust",
         "javascript",
+        "hcl",
       },
     },
   },

@@ -147,7 +147,6 @@ if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   if [ "$hostname" = "elara" ]; then
     exec sway --unsupported-gpu
   else 
-    export WLR_RENDERER=vulkan
     exec sway
   fi
 fi

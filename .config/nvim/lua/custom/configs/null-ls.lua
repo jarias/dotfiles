@@ -11,6 +11,7 @@ local sources = {
   formatting.sqlfmt,
   formatting.goimports,
   formatting.rustfmt,
+  formatting.hclfmt,
 
   lint.shellcheck,
   lint.eslint,

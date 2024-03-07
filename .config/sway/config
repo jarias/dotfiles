@@ -160,7 +160,7 @@ bindsym F12 exec ~/.local/bin/change-audio-output.sh
 # Screenshot:
 #
 
-bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/screenshots/screenshot-$(date +"%m-%d-%y-%I-%M").png
+bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | satty --filename - --output-filename ~/Pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png
 
 #
 # Resizing containers:
@@ -199,6 +199,7 @@ exec_always {
   gsettings set $gnome-schema icon-theme 'Papirus'
 }
 
+for_window [app_id="gamescope"] fullscreen enable
 for_window [app_id="flameshot"] floating enabled, fullscreen disabled, move absolute position 0 0, border pixel 0
 for_window [app_id="thunar" title="File Operation Progress"] floating enable
 for_window [app_id="cemu" title="Title Manager"] floating enable
@@ -220,8 +221,8 @@ exec swayidle -w \
   timeout 1805 'swaymsg "output * power off"' \
   resume 'swaymsg "output * power on"'
 
-exec_always ~/.local/bin/sway-outputs
 
+exec_always ~/.local/bin/sway-outputs
 exec waybar
 exec ~/.local/bin/sway-session
 
