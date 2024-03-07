@@ -5,15 +5,14 @@ bindkey -v
 
 CDPATH="$HOME/Projects"
 
-path+="$HOME/.zsh/plugins/zsh-history-substring-search"
-fpath+="$HOME/.zsh/plugins/zsh-history-substring-search"
-
 # Oh-My-Zsh/Prezto calls compinit during initialization,
 # calling it twice causes sight start up slowdown
 # as all $fpath entries will be traversed again.
 autoload -Uz compinit && compinit
 
 if [ -f "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh" ]; then
+  path+="$HOME/.zsh/plugins/zsh-history-substring-search"
+  fpath+="$HOME/.zsh/plugins/zsh-history-substring-search"
   source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
 fi
 
@@ -38,8 +37,15 @@ if [ -z "$INSIDE_EMACS" ]; then
 fi
 
 if [[ $options[zle] = on ]]; then
-  . /usr/share/fzf/completion.zsh
-  . /usr/share/fzf/key-bindings.zsh
+  if [ -f "/usr/share/fzf/completion.zsh" ]; then
+    . /usr/share/fzf/completion.zsh
+  fi
+  if [ -f "/usr/share/fzf/key-bindings.zsh" ]; then
+    . /usr/share/fzf/key-bindings.zsh
+  fi
+  if [ -f "/usr/share/fzf/shell/key-bindings.zsh" ]; then
+    . /usr/share/fzf/shell/key-bindings.zsh
+  fi
 fi
 
 unsetopt menu_complete   # do not autoselect the first completion entry
