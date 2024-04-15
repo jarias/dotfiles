@@ -1,0 +1,4 @@
+[general]
+early-exit = true
+copy-command = "wl-copy"
+fullscreen = true
