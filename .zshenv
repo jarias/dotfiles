@@ -1,8 +1,6 @@
 export EDITOR="vim"
 export PATH="$PATH:$HOME/.poetry/bin:$HOME/.local/bin"
 export PATH="$PATH:/home/jarias/.local/share/JetBrains/Toolbox/scripts"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.dotnet:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
