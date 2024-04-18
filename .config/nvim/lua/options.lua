@@ -1,6 +1,6 @@
-local o, opt, g, wo, bo = vim.o, vim.opt, vim.g, vim.wo, vim.bo
+require "nvchad.options"
 
-g.mapleader = ","
+local o, opt, wo, bo = vim.o, vim.opt, vim.wo, vim.bo
 
 opt.colorcolumn = "120"
 opt.listchars = { tab = "▸\\", eol = "¬", trail = ".", extends = ">", precedes = "<" }

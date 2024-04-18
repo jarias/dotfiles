@@ -1,5 +1,12 @@
-local plugins = {
+return {
   {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    config = function()
+      require "configs.conform"
+    end,
+  },
+{
     "junegunn/vim-easy-align",
     lazy = false,
   },
@@ -12,12 +19,12 @@ local plugins = {
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
       config = function()
-        require "custom.configs.null-ls"
+        require "configs.null-ls"
       end,
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require('nvchad.configs.lspconfig').defaults()
+      require "configs.lspconfig"
     end,
   },
   {
@@ -56,6 +63,5 @@ local plugins = {
         "rust-analyzer",
       },
     },
-  },
-}
-return plugins
+  }
+  }
