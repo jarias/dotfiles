@@ -146,6 +146,7 @@ alias tfa='terraform apply plan.out'
 alias tfp='terraform plan -out plan.out'
 alias timestamp='date +%s'
 alias vimdiff='nvim -d'
+alias vim='nvim'
 
 hostname=$(hostnamectl hostname)
 
