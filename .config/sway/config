@@ -199,6 +199,7 @@ exec_always {
   gsettings set $gnome-schema icon-theme 'Papirus'
 }
 
+for_window [title="^Android Emulator -*"] floating enable
 for_window [app_id="gamescope"] fullscreen enable
 for_window [title="^Steam$"] fullscreen enable
 for_window [app_id="flameshot"] floating enabled, fullscreen disabled, move absolute position 0 0, border pixel 0

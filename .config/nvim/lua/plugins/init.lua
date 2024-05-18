@@ -6,7 +6,7 @@ return {
       require "configs.conform"
     end,
   },
-{
+  {
     "junegunn/vim-easy-align",
     lazy = false,
   },
@@ -23,7 +23,7 @@ return {
       end,
     },
     config = function()
-      require('nvchad.configs.lspconfig').defaults()
+      require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
   },
@@ -63,5 +63,5 @@ return {
         "rust-analyzer",
       },
     },
-  }
-  }
+  },
+}
