@@ -4,7 +4,7 @@ confirm() {
 	local command=$1
 	local yesno=" Yes\n No"
 
-	answer=$(echo -e "$yesno" | tofi --width 10% --height 15% | awk '{print tolower($2)}')
+	answer=$(echo -e "$yesno" | tofi --width 15% --height 15% | awk '{print tolower($2)}')
 	if [ "$answer" = "yes" ]; then
 		$command
 	fi
@@ -12,7 +12,7 @@ confirm() {
 
 entries=" Shutdown\n Reboot\n Suspend\n Logout\n Lockscreen"
 
-selected=$(echo -e "$entries" | tofi --width 15% --height 30% | awk '{print tolower($2)}')
+selected=$(echo -e "$entries" | tofi --width 15% --height 25% | awk '{print tolower($2)}')
 
 case $selected in
 shutdown)

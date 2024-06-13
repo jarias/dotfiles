@@ -13,10 +13,10 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = "Cascadia Code"
+	font = "CaskaydiaCove Nerd Font Mono"
 
 	# Point size of text.
-	font-size = 18
+	font-size = 20
 
 	# Comma separated list of OpenType font feature settings to apply,
 	# if supported by the chosen font. The format is similar to the CSS
