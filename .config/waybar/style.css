@@ -2,10 +2,8 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family:
-    FontAwesome,
-    CaskaydiaCove Nerd Font Mono;
-  font-size: 14px;
+  font-family: "CaskaydiaCove Nerd Font", "Font Awesome 6 Free";
+  font-size: 15px;
 }
 
 window#waybar {
