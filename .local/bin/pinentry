@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+	/usr/bin/pinentry-gnome3
+elif [[ "$unamestr" == 'Darwin' ]]; then
+	/opt/homebrew/bin/pinentry-mac
+fi
