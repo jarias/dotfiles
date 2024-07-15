@@ -33,7 +33,7 @@ export GPG_TTY
 gpg-connect-agent updatestartuptty /bye > /dev/null
 
 if [ -z "$INSIDE_EMACS" ]; then
-  eval "$(/usr/bin/starship init zsh)"
+  eval "$(starship init zsh)"
 fi
 
 if [[ $options[zle] = on ]]; then
@@ -101,7 +101,7 @@ bindkey "${terminfo[kend]}" end-of-line
 bindkey "\e[3~" delete-char
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
-eval "$(/usr/bin/direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 function randp() {
   < /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-32}
@@ -148,15 +148,20 @@ alias timestamp='date +%s'
 alias vimdiff='nvim -d'
 alias vim='nvim'
 
-hostname=$(hostnamectl hostname)
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+  hostname=$(hostnamectl hostname)
 
-if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  if [ "$hostname" = "elara" ]; then
-    exec sway --unsupported-gpu
-  else 
-    exec sway
+  if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    if [ "$hostname" = "elara" ]; then
+      exec sway --unsupported-gpu
+    else 
+      exec sway
+    fi
   fi
 fi
+
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
