@@ -1,9 +1,20 @@
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+
 typeset -U path cdpath fpath manpath
 
 # Use viins keymap as the default.
 bindkey -v
 
 CDPATH="$HOME/Projects"
+
+unamestr=$(uname)
 
 # Oh-My-Zsh/Prezto calls compinit during initialization,
 # calling it twice causes sight start up slowdown
@@ -36,15 +47,18 @@ if [ -z "$INSIDE_EMACS" ]; then
   eval "$(starship init zsh)"
 fi
 
+fzfbasedir="/usr/share/fzf"
+
+if [[ "$unamestr" == 'Darwin' ]]; then
+  fzfbasedir="/opt/homebrew/opt/fzf/shell"
+fi
+
 if [[ $options[zle] = on ]]; then
-  if [ -f "/usr/share/fzf/completion.zsh" ]; then
-    . /usr/share/fzf/completion.zsh
+  if [ -f "$fzfbasedir/completion.zsh" ]; then
+    . $fzfbasedir/completion.zsh
   fi
-  if [ -f "/usr/share/fzf/key-bindings.zsh" ]; then
-    . /usr/share/fzf/key-bindings.zsh
-  fi
-  if [ -f "/usr/share/fzf/shell/key-bindings.zsh" ]; then
-    . /usr/share/fzf/shell/key-bindings.zsh
+  if [ -f "$fzfbasedir/key-bindings.zsh" ]; then
+    . $fzfbasedir/key-bindings.zsh
   fi
 fi
 
@@ -148,7 +162,6 @@ alias timestamp='date +%s'
 alias vimdiff='nvim -d'
 alias vim='nvim'
 
-unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
   hostname=$(hostnamectl hostname)
 
