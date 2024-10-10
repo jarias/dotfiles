@@ -44,24 +44,11 @@ return {
         "rust",
         "javascript",
         "hcl",
+        "liquid",
       },
     },
   },
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "terraform-ls",
-        "lua-language-server",
-        "stylua",
-        "shfmt",
-        "shellcheck",
-        "prettier",
-        "sqlfmt",
-        "gopls",
-        "goimports",
-        "rust-analyzer",
-      },
-    },
   },
 }

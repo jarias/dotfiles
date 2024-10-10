@@ -197,6 +197,7 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
   gsettings set $gnome-schema gtk-theme 'Dracula'
   gsettings set $gnome-schema icon-theme 'Papirus'
+  ~/.local/bin/sway-outputs
 }
 
 for_window [title="^Android Emulator -*"] floating enable
@@ -211,6 +212,8 @@ for_window [class="steam_app*"] inhibit_idle focus
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 640 px height 360 px, move position 1100 px 600 px, sticky on
 for_window [title=".*Huddle"] floating enable, sticky on
 
+bar swaybar_command waybar
+
 input * {
     xkb_layout "us"
     xkb_variant "altgr-intl"
@@ -223,9 +226,6 @@ exec swayidle -w \
   timeout 1805 'swaymsg "output * power off"' \
   resume 'swaymsg "output * power on"'
 
-
-exec_always ~/.local/bin/sway-outputs
-exec waybar
 exec ~/.local/bin/sway-session
 
 workspace 1 output DP-1

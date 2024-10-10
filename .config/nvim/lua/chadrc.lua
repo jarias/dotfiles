@@ -4,13 +4,25 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
   theme = "chadracula",
+}
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+M.mason = {
+  pkgs = {
+    "terraform-ls",
+    "lua-language-server",
+    "stylua",
+    "shfmt",
+    "shellcheck",
+    "prettier",
+    "sqlfmt",
+    "gopls",
+    "goimports",
+    "rust-analyzer",
+    "typescript-language-server",
+    "htmx-lsp",
+  },
 }
 
 return M

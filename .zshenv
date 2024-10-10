@@ -4,7 +4,7 @@ export ANDROID_HOME=$HOME/Android/sdk
 
 export PATH="$PATH:$HOME/.poetry/bin:$HOME/.local/bin"
 export PATH="$PATH:/home/jarias/.local/share/JetBrains/Toolbox/scripts"
-export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"
 export PATH="$HOME/.dotnet:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=$PATH:$ANDROID_HOME/emulator
