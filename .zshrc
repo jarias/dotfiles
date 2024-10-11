@@ -118,7 +118,7 @@ bindkey  "^[[F"   end-of-line
 eval "$(direnv hook zsh)"
 
 function randp() {
-  < /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-32}
+  LC_ALL=C tr -dc A-Z-a-z-0-9 < /dev/urandom | head -c${1:-32}
 }
 
 # Aliases
