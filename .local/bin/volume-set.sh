@@ -7,14 +7,15 @@ function polybar_vol() {
 	is_muted=$?
 
 	current_sink_name=$(wpctl inspect @DEFAULT_AUDIO_SINK@ | grep "node.description" | cut -d'=' -f2 | sed -E 's/"//gm;t;d' | awk '{$1=$1};1')
-	if [[ $current_sink_name == "Family 17h/19h HD Audio Controller Analog Stereo" ]]; then
+	if [[ $current_sink_name == "Family 17h/19h/1ah HD Audio Controller Analog Stereo" ]]; then
 		icon=""
+		echo "${icon}  ${volume%.*}%"
 	fi
 
 	if [ $is_muted -eq 0 ]; then
 		icon=""
+		echo "${icon} ${volume%.*}%"
 	fi
-	echo "${icon} ${volume%.*}%"
 }
 
 function polybar_micvol() {
