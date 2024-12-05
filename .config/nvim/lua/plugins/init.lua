@@ -51,4 +51,14 @@ return {
   {
     "williamboman/mason.nvim",
   },
+  {
+    "brianhuster/live-preview.nvim",
+    dependencies = {
+      "brianhuster/autosave.nvim",
+      "nvim-telescope/telescope.nvim",
+      "ibhagwan/fzf-lua",
+      "echasnovski/mini.pick",
+    },
+    ft = { "asciidoc" },
+  },
 }
