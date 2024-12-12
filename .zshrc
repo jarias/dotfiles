@@ -60,6 +60,9 @@ if [[ $options[zle] = on ]]; then
   if [ -f "$fzfbasedir/key-bindings.zsh" ]; then
     . $fzfbasedir/key-bindings.zsh
   fi
+  if [ -f "$fzfbasedir/shell/key-bindings.zsh" ]; then
+    . $fzfbasedir/shell/key-bindings.zsh
+  fi
 fi
 
 unsetopt menu_complete   # do not autoselect the first completion entry

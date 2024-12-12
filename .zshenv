@@ -1,4 +1,4 @@
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # Added by Toolbox App
 export PATH="$PATH:/Users/jarias/Library/Application Support/JetBrains/Toolbox/scripts"
