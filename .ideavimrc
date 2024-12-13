@@ -4,11 +4,24 @@ map <leader>fc <Action>(GotoClass)
 map <leader>ff <Action>(GotoFile)
 map <leader>fb <Action>(Switcher)
 
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gf <Action>(Back)
+nmap <leader>gb <Action>(Forward)
+
 map <leader>fm <Action>(ReformatCode)
 
-map <leader>ra <Action>(RenameElement)
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 
-map <leader>g <Action>(Generate)
+map <leader>gg <Action>(Generate)
 
 map <leader>im <Action>(ImplementMethods)
 map <leader>om <Action>(OverrideMethods)
