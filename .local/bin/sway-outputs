@@ -16,6 +16,6 @@ if [ "$hostname" == "elara" ]; then
 fi
 
 if [ "$hostname" == "e-nlv41942n" ]; then
-	sway output eDP-1 resolution 1920x1080 position 0 0
+	sway output eDP-1 resolution 1920x1080 position 0 0 bg ~/Pictures/wallpaper_main.jpg fill
 	sway output HDMI-A-1 position 1920 0
 fi
