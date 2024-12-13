@@ -42,7 +42,7 @@ success_symbol = "[❯](bold green)"
 style = "bold yellow"
 
 [directory]
-style = "bold green"
+style = "bold cyan"
 
 [git_branch]
 style = "bold pink"
