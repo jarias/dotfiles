@@ -12,3 +12,6 @@ $line_break\
 $jobs\
 $status\
 $character"""
+
+[hostname]
+ssh_symbol = ' '
