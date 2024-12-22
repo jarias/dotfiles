@@ -194,11 +194,6 @@ gaps inner 5
 
 set $gnome-schema org.gnome.desktop.interface
 
-exec_always {
-  gsettings set $gnome-schema gtk-theme 'Dracula'
-  gsettings set $gnome-schema icon-theme 'Papirus'
-  ~/.local/bin/sway-outputs
-}
 
 for_window [title="^Android Emulator -*"] floating enable
 for_window [app_id="gamescope"] fullscreen enable
@@ -226,13 +221,15 @@ exec swayidle -w \
   timeout 1805 'swaymsg "output * power off"' \
   resume 'swaymsg "output * power on"'
 
+exec_always {
+  gsettings set $gnome-schema gtk-theme 'Dracula'
+  gsettings set $gnome-schema icon-theme 'Papirus'
+#  ~/.local/bin/sway-outputs
+}
+
 exec ~/.local/bin/sway-session
 
-#workspace 1 output HDMI-A-1 DP-1
-#workspace 2 output HDMI-A-1 DP-1
-#workspace 3 output HDMI-A-1 DP-1
-#workspace 4 output HDMI-A-1 DP-1
-#workspace 5 output HDMI-A-1 DP-1
-#workspace 6 output HDMI-A-1 DP-1
-#workspace 8 output HDMI-A-1 eDP-1
+include ~/.config/sway/outputs
+include ~/.config/sway/workspaces
 
+exec ~/.azotebg

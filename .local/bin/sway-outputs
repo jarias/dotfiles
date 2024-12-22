@@ -5,10 +5,7 @@ set -e
 hostname=$(hostnamectl hostname)
 
 if [ "$hostname" == "fulcrum" ]; then
-	sway output DP-1 resolution 1920x1080@120Hz position 1080 0 bg ~/Pictures/wallpaper_main.jpg fill
-	sway output HDMI-A-1 transform 270 position 0 0
-	#	xrandr --output DP-1 --primary
-
+	xrandr --output DP-1 --primary
 	sway workspace 1 output DP-1
 	sway workspace 2 output DP-1
 	sway workspace 3 output DP-1
@@ -16,6 +13,9 @@ if [ "$hostname" == "fulcrum" ]; then
 	sway workspace 5 output DP-1
 	sway workspace 6 output DP-1
 	sway workspace 8 output HDMI-A-1
+
+	sway "output DP-1 resolution 1920x1080@120Hz position 0 0 bg ~/Pictures/wallpaper_main.jpg fill"
+#	sway "output HDMI-A-1 mode 1920x1080@60Hz transform 270 position -1920 0"
 fi
 
 if [ "$hostname" == "elara" ]; then
@@ -24,8 +24,8 @@ if [ "$hostname" == "elara" ]; then
 fi
 
 if [ "$hostname" == "e-nlv41942n" ]; then
-	sway output eDP-1 resolution 1920x1080 position 0 0 bg ~/Pictures/wallpaper_main.jpg fill
 	sway output HDMI-A-1 resolution 1920x1080 position 1920 0 bg ~/Pictures/wallpaper_main.jpg fill
+	sway output eDP-1 resolution 1920x1080 position 0 0 bg ~/Pictures/wallpaper_main.jpg fill
 
 	if [ "$(swaymsg -pt get_outputs | grep 'HDMI-A-1')" ]; then
 		swaymsg workspace 1 output HDMI-A-1
