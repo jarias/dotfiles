@@ -1,12 +1,3 @@
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
-fi
-
-
 typeset -U path cdpath fpath manpath
 
 # Use viins keymap as the default.
@@ -16,10 +7,10 @@ CDPATH="$HOME/Projects"
 
 unamestr=$(uname)
 
-# Oh-My-Zsh/Prezto calls compinit during initialization,
-# calling it twice causes sight start up slowdown
-# as all $fpath entries will be traversed again.
 autoload -Uz compinit && compinit
+
+autoload bashcompinit && bashcompinit
+source $HOME/.sdkman/contrib/completion/bash/sdk
 
 if [ -f "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh" ]; then
   path+="$HOME/.zsh/plugins/zsh-history-substring-search"
@@ -114,11 +105,10 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
-bindkey "\e[3~" delete-char
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-eval "$(direnv hook zsh)"
+bindkey "${terminfo[kend]}"  end-of-line
+bindkey "\e[3~"              delete-char
+bindkey "^[[H"               beginning-of-line
+bindkey "^[[F"               end-of-line
 
 function randp() {
   LC_ALL=C tr -dc A-Z-a-z-0-9 < /dev/urandom | head -c${1:-32}
@@ -158,9 +148,6 @@ alias ls='ls -G --color=auto'
 alias lt='ls -lt'
 alias md='mkdir -p'
 alias reload='source ~/.zshrc'
-alias tf='terraform'
-alias tfa='terraform apply plan.out'
-alias tfp='terraform plan -out plan.out'
 alias timestamp='date +%s'
 alias vimdiff='nvim -d'
 alias vim='nvim'
@@ -177,15 +164,23 @@ if [[ "$unamestr" == 'Linux' ]]; then
   fi
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#direnv
+eval "$(direnv hook zsh)"
+#direnv end
 
+#nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#nvm end
 
 # pnpm
 export PNPM_HOME="/home/jarias/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+#sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#sdkman end
+

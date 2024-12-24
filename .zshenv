@@ -3,10 +3,6 @@ export EDITOR="nvim"
 # Added by Toolbox App
 export PATH="$PATH:/Users/jarias/Library/Application Support/JetBrains/Toolbox/scripts"
 
-if [ -f "/opt/homebrew/bin/brew" ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 export ANDROID_HOME=$HOME/Android/sdk
 
 export PATH="$PATH:$HOME/.poetry/bin:$HOME/.local/bin"
