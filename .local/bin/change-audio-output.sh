@@ -14,9 +14,9 @@ speakers_sink_id=$(wpctl status | grep "Family 17h/19h/1ah HD Audio Controller A
 echo "Speakers sink id $speakers_sink_id"
 
 if [[ $current_sink_id == "$speakers_sink_id" ]]; then
-	echo "Setting headset as default sink"
-	wpctl set-default "$headset_sink_id"
+  echo "Setting headset as default sink"
+  wpctl set-default "$headset_sink_id"
 else
-	echo "Setting speakers as default sink"
-	wpctl set-default "$speakers_sink_id"
+  echo "Setting speakers as default sink"
+  wpctl set-default "$speakers_sink_id"
 fi

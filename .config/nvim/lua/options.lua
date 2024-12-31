@@ -35,3 +35,4 @@ bo.formatoptions = "tcqr"
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.templ", command = "set ft=templ" })
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.hcl", command = "set ft=hcl" })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.tf", command = "set ft=terraform" })
