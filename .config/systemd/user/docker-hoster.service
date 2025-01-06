@@ -10,4 +10,4 @@ ExecStartPre=/usr/bin/docker pull redis
 ExecStart=/usr/bin/docker run --rm --name %n -v /var/run/docker.sock:/tmp/docker.sock -v /etc/hosts:/tmp/hosts dvdarias/docker-hoster
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=sway-session.target

@@ -4,6 +4,7 @@ local options = {
     terraform = { "terraform_fmt" },
     sh = { "shfmt" },
     json = { "prettier" },
+    jsonc = { "prettier" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },

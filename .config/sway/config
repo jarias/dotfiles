@@ -157,6 +157,12 @@ bindsym XF86AudioPrev exec ~/.local/bin/volume-set.sh micdown
 bindsym F12 exec ~/.local/bin/change-audio-output.sh
 
 #
+# MangoHUD
+#
+
+bindsym Shift+F12 exec /usr/bin/mangohudctl toggle no_display
+
+#
 # Screenshot:
 #
 
