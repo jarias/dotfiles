@@ -22,7 +22,6 @@ M.mason = {
     "rust-analyzer",
     "typescript-language-server",
     "htmx-lsp",
-    "prettier",
   },
 }
 
