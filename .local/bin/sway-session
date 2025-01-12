@@ -37,7 +37,7 @@
 #  - https://systemd.io/DESKTOP_ENVIRONMENTS/
 #
 
-VARIABLES="XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE"
+VARIABLES="PATH XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE"
 VARIABLES="${VARIABLES} DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY"
 VARIABLES="${VARIABLES} MOZ_ENABLE_WAYLAND QT_QPA_PLATFORMTHEME QT_QPA_PLATFORM SSH_AUTH_SOCK OBS_USE_EGL _JAVA_AWT_WM_NONREPARENTING"
 SESSION_TARGET="sway-session.target"
@@ -51,8 +51,8 @@ WITH_CLEANUP=1
 # (Sway on Gnome/KDE/X11/etc.), as the only way to detect these is to check
 # for (WAYLAND_)?DISPLAY and that is know to be broken on Arch.
 if systemctl --user -q is-active "$SESSION_TARGET"; then
-	echo "Another session found; refusing to overwrite the variables"
-	exit 1
+  echo "Another session found; refusing to overwrite the variables"
+  exit 1
 fi
 
 # DBus activation environment is independent from systemd. While most of
@@ -60,8 +60,8 @@ fi
 # still don't and thus we should set the dbus environment with a separate
 # command.
 if hash dbus-update-activation-environment 2>/dev/null; then
-	# shellcheck disable=SC2086
-	dbus-update-activation-environment --systemd ${VARIABLES:- --all}
+  # shellcheck disable=SC2086
+  dbus-update-activation-environment --systemd ${VARIABLES:- --all}
 fi
 
 # reset failed state of all user units
@@ -77,19 +77,19 @@ systemctl --user start "$XDG_AUTOSTART_TARGET"
 
 # Optionally, wait until the compositor exits and cleanup variables and services.
 if [ -z "$WITH_CLEANUP" ] ||
-	[ -z "$SWAYSOCK" ] ||
-	! hash swaymsg 2>/dev/null; then
-	exit 0
+  [ -z "$SWAYSOCK" ] ||
+  ! hash swaymsg 2>/dev/null; then
+  exit 0
 fi
 
 # declare cleanup handler and run it on script termination via kill or Ctrl-C
 session_cleanup() {
-	# stop the session target and unset the variables
-	systemctl --user start --job-mode=replace-irreversibly "$SESSION_SHUTDOWN_TARGET"
-	if [ -n "$VARIABLES" ]; then
-		# shellcheck disable=SC2086
-		systemctl --user unset-environment $VARIABLES
-	fi
+  # stop the session target and unset the variables
+  systemctl --user start --job-mode=replace-irreversibly "$SESSION_SHUTDOWN_TARGET"
+  if [ -n "$VARIABLES" ]; then
+    # shellcheck disable=SC2086
+    systemctl --user unset-environment $VARIABLES
+  fi
 }
 trap session_cleanup INT TERM
 # wait until the compositor exits
