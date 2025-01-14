@@ -2,7 +2,6 @@
 
 set -e
 
-#current_sink_name=$(wpctl inspect @DEFAULT_AUDIO_SINK@ | grep node.name | cut -d' ' -f6 | sed -E 's/"//gm;t;d')
 current_sink_id=$(wpctl inspect @DEFAULT_AUDIO_SINK@ | grep id | head -n 1 | cut -d ' ' -f2 | sed -E 's/,//gm;t;d')
 
 echo "Current sink id $current_sink_id"
