@@ -1,5 +1,7 @@
 typeset -U PATH
 
+cdpath+=(~/Projects)
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -72,10 +74,10 @@ function randp() {
 }
 
 # Aliases
-alias ..='cd ..'
+alias cd="z"
+alias ..='z ..'
 alias a='ls -A'
 alias c='clear'
-alias cdd='cd -'
 alias cl='clear; l'
 alias cls='clear; ls'
 alias dc='docker rm $(docker ps -aq)'
@@ -107,6 +109,7 @@ alias reload='source ~/.zshrc'
 alias timestamp='date +%s'
 alias vimdiff='nvim -d'
 alias vim='nvim'
+alias y='yazi'
 
 #direnv
 eval "$(direnv hook zsh)"
@@ -125,3 +128,5 @@ export NVM_DIR="$HOME/.nvm"
 #nvm end
 
 eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh)"
