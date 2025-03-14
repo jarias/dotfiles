@@ -110,6 +110,7 @@ alias timestamp='date +%s'
 alias vimdiff='nvim -d'
 alias vim='nvim'
 alias y='yazi'
+alias sys-update="sudo pacman -Syu"
 
 #direnv
 eval "$(direnv hook zsh)"
