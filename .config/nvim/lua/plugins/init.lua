@@ -38,6 +38,8 @@ return {
         "javascript",
         "hcl",
         "liquid",
+        "graphql",
+        "embedded_template",
       },
     },
   },

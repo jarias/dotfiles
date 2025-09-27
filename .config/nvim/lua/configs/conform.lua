@@ -5,6 +5,8 @@ local options = {
     sh = { "shfmt" },
     json = { "prettier" },
     jsonc = { "prettier" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
