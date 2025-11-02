@@ -1,0 +1,22 @@
+name = "power"
+name_pretty = "power"
+
+[[entries]]
+text = "Shutdown"
+actions = { "shutdown" = "systemctl poweroff"}
+icon = "system-shutdown"
+
+[[entries]]
+text = "Reboot"
+actions = { "reboot" = "systemctl restart"}
+icon = "system-restart"
+
+[[entries]]
+text = "Logout"
+actions = { "logout" = "sway exit"}
+icon = "gnome-logout"
+
+[[entries]]
+text = "Lockscreen"
+actions = { "lock-screen" = "swaylock"}
+icon = "system-lock-screen"

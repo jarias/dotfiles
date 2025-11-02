@@ -1,11 +1,11 @@
 [Unit]
-Description=Dunst notification daemon
+Description=Elephant
 After=graphical-session.target
 
 [Service]
-BusName=org.freedesktop.Notifications
-ExecStart=/usr/bin/dunst
-Type=dbus
+Type=simple
+ExecStart=elephant
+Restart=on-failure
 Slice=session-graphical.slice
 
 [Install]

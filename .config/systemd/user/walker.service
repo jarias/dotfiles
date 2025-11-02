@@ -1,11 +1,11 @@
 [Unit]
-Description=Dunst notification daemon
+Description=Walker
 After=graphical-session.target
 
 [Service]
-BusName=org.freedesktop.Notifications
-ExecStart=/usr/bin/dunst
-Type=dbus
+Type=simple
+ExecStart=walker --gapplication-service
+Restart=on-failure
 Slice=session-graphical.slice
 
 [Install]

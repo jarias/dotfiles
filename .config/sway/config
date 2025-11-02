@@ -14,26 +14,27 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term /usr/bin/kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu tofi-drun | xargs swaymsg exec --
+#set $menu tofi-drun | xargs swaymsg exec --
+set $menu walker
 
 ### Key bindings
 #
 # Basics:
 #
 
-bindsym $mod+Shift+p exec ~/.local/bin/passmenu --type
+bindsym $mod+Shift+p exec uwsm-app -- $menu -m "menus:pass"
 # Start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec uwsm-app -- $term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
 # Start your launcher
-bindsym $mod+p exec $menu
+bindsym $mod+p exec uwsm-app -- $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -46,7 +47,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec ~/.local/bin/powermenu
+bindsym $mod+Shift+e exec uwsm-app -- $menu -m "menus:power"
 
 #
 # Moving around:
@@ -166,7 +167,7 @@ bindsym Shift+F12 exec /usr/bin/mangohudctl toggle no_display
 # Screenshot:
 #
 
-bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | satty --filename - --output-filename ~/Pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png
+bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | satty --filename - --output-filename ~/Pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png --early-exit --actions-on-enter save-to-clipboard
 
 #
 # Resizing containers:
@@ -204,6 +205,7 @@ set $gnome-schema org.gnome.desktop.interface
 for_window [title="^Android Emulator -*"] floating enable
 for_window [app_id="thunar" title="File Operation Progress"] floating enable
 for_window [app_id="cemu" title="Title Manager"] floating enable
+for_window [app_id="com.gabm.satty"] fullscreen disable, floating enable
 for_window [title="WiiUDownloader - Downloading"] floating enable
 for_window [class="steam_app*"] inhibit_idle focus
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 640 px height 360 px, move position 1100 px 600 px, sticky on
@@ -212,7 +214,7 @@ for_window [title="Battle.net" instance="steam_app*"] floating enable
 for_window [title="World of Warcraft" instance="steam_app*"] fullscreen enable, move to workspace 5, focus
 for_window [title="MTGA"] fullscreen enable, move to workspace 5, focus
 
-bar swaybar_command waybar
+#bar swaybar_command uwsm app -s s -- /usr/bin/waybar
 
 input * {
     xkb_layout "us"
@@ -231,9 +233,9 @@ exec_always {
   gsettings set $gnome-schema icon-theme 'Papirus'
 }
 
-exec ~/.local/bin/sway-session
-
 include ~/.config/sway/outputs
 include ~/.config/sway/workspaces
 
 exec ~/.azotebg
+
+exec uwsm finalize $UWSM_FINALIZE_VARNAMES
