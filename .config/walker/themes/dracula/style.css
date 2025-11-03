@@ -6,6 +6,8 @@
 
 * {
   all: unset;
+  font-family: monospace;
+  font-size: 18px;
 }
 
 .normal-icons {
@@ -44,14 +46,15 @@ scrollbar {
 }
 
 .input placeholder {
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .input {
   caret-color: @theme_fg_color;
   background: lighter(@window_bg_color);
-  padding: 10px;
+  padding: 15px;
   color: @theme_fg_color;
+  font-size: 20px;
 }
 
 .input:focus,
