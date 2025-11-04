@@ -1,5 +1,6 @@
 [Unit]
 Description=udiskie mount daemon
+PartOf=graphical-session.target
 After=graphical-session.target
 
 [Service]
@@ -8,4 +9,3 @@ Slice=session-graphical.slice
 
 [Install]
 WantedBy=graphical-session.target
-

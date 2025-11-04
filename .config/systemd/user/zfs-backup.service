@@ -1,0 +1,7 @@
+[Unit]
+Description=ZFS AutoBackup
+
+[Service]
+CPUSchedulingPolicy=idle
+ExecStart=%h/.local/bin/zfs-autobackup -v --clear-mountpoint --ssh-target truenas.local offsite1 nas/backups/%l --keep-source=0
+IOSchedulingClass=idle

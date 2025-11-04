@@ -1,6 +1,8 @@
 [Unit]
 Description=Walker
+PartOf=graphical-session.target
 After=graphical-session.target
+Requires=elephant.service
 
 [Service]
 Type=simple
