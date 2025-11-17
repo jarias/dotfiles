@@ -7,3 +7,14 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help ta
 
 vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+
+vim.keymap.set("n", "<A-,>", "<Cmd>BufferPrevious<CR>", { desc = "Previous Buffer", noremap = true, silent = true })
+vim.keymap.set("n", "<A-.>", "<Cmd>BufferNext<CR>", { desc = "Previous Buffer", noremap = true, silent = true })
+vim.keymap.set("n", "<A-c>", "<Cmd>BufferClose<CR>", { desc = "Close Buffer", noremap = true, silent = true })
+
+vim.keymap.set(
+	"n",
+	"<leader>ed",
+	"<Cmd>lua MiniFiles.open()<CR>",
+	{ desc = "Open Mini Files", noremap = true, silent = true }
+)
