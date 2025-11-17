@@ -12,6 +12,8 @@ local lsp_servers = {
 	"lua",
 	"typescript",
 	"kotlin",
+	"go",
+	"rust",
 }
 
 for _, server in next, lsp_servers do
