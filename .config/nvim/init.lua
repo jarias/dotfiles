@@ -7,4 +7,13 @@ vim.cmd.colorscheme("dracula")
 vim.lsp.config("*", {
 	capabilities = require("blink.cmp").get_lsp_capabilities(),
 })
-vim.lsp.enable("lua_ls")
+
+local lsp_servers = {
+	"lua",
+	"typescript",
+	"kotlin",
+}
+
+for _, server in next, lsp_servers do
+	vim.lsp.enable(server)
+end
