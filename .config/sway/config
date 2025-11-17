@@ -189,11 +189,13 @@ for_window [app_id="thunar" title="File Operation Progress"] floating enable
 for_window [app_id="cemu" title="Title Manager"] floating enable
 for_window [app_id="com.gabm.satty"] fullscreen disable, floating enable
 for_window [title="WiiUDownloader - Downloading"] floating enable
-for_window [class="steam_app*"] inhibit_idle focus
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 640 px height 360 px, move position 1100 px 600 px, sticky on
 for_window [title=".*Huddle"] floating enable, sticky on
+
+for_window [class="steam_app*"] inhibit_idle focus
 for_window [title="Battle.net" instance="steam_app*"] floating enable
 for_window [title="World of Warcraft" instance="steam_app*"] fullscreen enable, move to workspace 5, focus
+for_window [title="XCOM 2" instance="steam_app*"] fullscreen enable, move to workspace 5, focus
 for_window [title="MTGA"] fullscreen enable, move to workspace 5, focus
 
 input * {
