@@ -21,9 +21,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set(mode, rhs, lhs, { buffer = event.buf })
     end
 
-    bufmap("n", "gd", require("telescope.builtin").lsp_definitions)
-    bufmap("n", "grt", require("telescope.builtin").lsp_type_definitions)
-    bufmap("n", "grd", "<cmd>lua vim.lsp.buf.declaration()<cr>")
+    bufmap("n", "<leader>gd", require("telescope.builtin").lsp_definitions)
+    bufmap("n", "<leader>gy", require("telescope.builtin").lsp_type_definitions)
+    bufmap("n", "<leader>grd", vim.lsp.buf.declaration)
+    bufmap("n", "<leader>rn", vim.lsp.buf.rename)
   end,
 })
 
