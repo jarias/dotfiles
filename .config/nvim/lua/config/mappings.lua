@@ -2,6 +2,7 @@ vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { des
 vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Telescope help tags" })
+vim.keymap.set("n", "<leader>fr", require("telescope.builtin").registers, { desc = "Telescope registers" })
 
 vim.keymap.set("n", "<A-,>", "<Cmd>BufferPrevious<CR>", { desc = "Previous Buffer", noremap = true, silent = true })
 vim.keymap.set("n", "<A-.>", "<Cmd>BufferNext<CR>", { desc = "Previous Buffer", noremap = true, silent = true })

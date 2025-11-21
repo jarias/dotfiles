@@ -1,5 +1,6 @@
 vim.opt.colorcolumn = "120"
 vim.opt.listchars = { tab = "▸\\", eol = "¬", trail = ".", extends = ">", precedes = "<" }
+vim.opt.clipboard = "unnamedplus"
 
 vim.o.autoread = true
 vim.o.encoding = "utf-8"
