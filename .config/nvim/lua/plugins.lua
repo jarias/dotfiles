@@ -62,10 +62,6 @@ return {
     },
   },
   {
-    "nvim-tree/nvim-tree.lua",
-    opts = {},
-  },
-  {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
@@ -94,5 +90,12 @@ return {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
+  },
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    lazy = false,
   },
 }
