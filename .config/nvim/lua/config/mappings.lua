@@ -31,3 +31,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     bufmap("n", "grd", "<cmd>lua vim.lsp.buf.declaration()<cr>")
   end,
 })
+
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+vim.keymap.set({ "n", "t" }, "<A-h>", "<Cmd>ToggleHorizontalTerminal<CR>", { desc = "Toggle Horizontal Terminal" })
