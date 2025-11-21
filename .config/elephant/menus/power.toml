@@ -9,7 +9,7 @@ icon = "system-shutdown"
 
 [[entries]]
 text = "Reboot"
-actions = { "reboot" = "systemctl restart"}
+actions = { "reboot" = "systemctl reboot"}
 icon = "system-restart"
 
 [[entries]]
