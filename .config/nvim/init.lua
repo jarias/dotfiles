@@ -9,6 +9,8 @@ require("mini.git").setup()
 require("mini.bracketed").setup()
 require("ibl").setup()
 
+require("telescope").load_extension("ui-select")
+
 vim.cmd.colorscheme("dracula")
 
 vim.lsp.config("*", {

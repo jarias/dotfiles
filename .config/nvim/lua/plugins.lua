@@ -98,4 +98,8 @@ return {
     dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     lazy = false,
   },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    opts = {},
+  },
 }

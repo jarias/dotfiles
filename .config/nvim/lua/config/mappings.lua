@@ -25,6 +25,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     bufmap("n", "<leader>gy", require("telescope.builtin").lsp_type_definitions)
     bufmap("n", "<leader>grd", vim.lsp.buf.declaration)
     bufmap("n", "<leader>rn", vim.lsp.buf.rename)
+    bufmap("n", "<A-CR>", vim.lsp.buf.code_action)
   end,
 })
 
