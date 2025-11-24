@@ -25,6 +25,7 @@ vim.o.breakindentopt = "min:20,shift:2"
 vim.o.whichwrap = "<,>,h,l,[,]"
 vim.o.backupcopy = "no"
 vim.o.winborder = "rounded"
+vim.o.laststatus = 3
 
 vim.wo.wrap = true
 vim.wo.linebreak = true
