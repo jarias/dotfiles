@@ -11,7 +11,6 @@ set $menu walker
 
 ### Key bindings
 
-bindsym $mod+Shift+p exec uwsm-app -- $menu -m "menus:pass"
 
 # Start a terminal
 bindsym $mod+Return exec uwsm-app -- $term
@@ -19,8 +18,10 @@ bindsym $mod+Return exec uwsm-app -- $term
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Start your application launcher
+# Start walker menus
 bindsym $mod+p exec uwsm-app -- $menu -m "desktopapplications"
+bindsym $mod+Shift+p exec uwsm-app -- $menu -m "menus:pass"
+bindsym $mod+Shift+e exec uwsm-app -- $menu -m "menus:power"
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -31,9 +32,6 @@ floating_modifier $mod normal
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
-
-# Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec uwsm-app -- $menu -m "menus:power"
 
 #
 # Moving around:
@@ -144,11 +142,6 @@ bindsym XF86AudioPrev exec ~/.local/bin/volume-set.sh micdown
 bindsym F12 exec ~/.local/bin/change-audio-output.sh
 
 #
-# MangoHUD
-#
-bindsym Shift+F12 exec /usr/bin/mangohudctl toggle no_display
-
-#
 # Screenshot
 #
 bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | satty --filename - --output-filename ~/Pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png --early-exit --actions-on-enter save-to-clipboard
@@ -156,6 +149,8 @@ bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | satty --filename - --output-fil
 #
 # Resizing containers
 #
+bindsym $mod+r mode "resize"
+
 mode "resize" {
   # left will shrink the containers width
   # right will grow the containers width
@@ -177,13 +172,18 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
+#
+# Misc config
+#
 default_border pixel 2
 client.focused "#6272A4" "#6272A4" "#F8F8F2" "#6272A4"
 focus_follows_mouse no
 gaps inner 5
+set $gnome-schema org.gnome.desktop.interface
 
+#
+# Window rules
+#
 for_window [title="^Android Emulator -*"] floating enable
 for_window [app_id="thunar" title="File Operation Progress"] floating enable
 for_window [app_id="cemu" title="Title Manager"] floating enable
@@ -208,7 +208,6 @@ exec swayidle -w \
   timeout 1805 'swaymsg "output * power off"' \
   resume 'swaymsg "output * power on"'
 
-set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
   gsettings set $gnome-schema gtk-theme 'Dracula'
