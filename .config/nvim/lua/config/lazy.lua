@@ -27,6 +27,10 @@ require("lazy").setup({
   install = { colorscheme = { "dracula" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+
+  ui = {
+    border = "none",
+  },
 })
 
 vim.api.nvim_create_autocmd("FileType", {

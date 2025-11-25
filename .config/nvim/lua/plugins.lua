@@ -28,7 +28,11 @@ return {
   },
   {
     "mason-org/mason.nvim",
-    opts = {},
+    opts = {
+      ui = {
+        border = "none",
+      },
+    },
   },
   {
     "stevearc/conform.nvim",
