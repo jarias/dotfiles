@@ -1,6 +1,7 @@
 require("config.options")
 require("config.lazy")
 require("config.mappings")
+require("config.autocmds")
 
 require("mini.align").setup()
 require("mini.comment").setup()
@@ -26,6 +27,7 @@ local lsp_servers = {
   "kotlin",
   "go",
   "rust",
+  "templ",
 }
 
 for _, server in next, lsp_servers do
