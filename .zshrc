@@ -111,6 +111,7 @@ alias vimdiff='nvim -d'
 alias vim='nvim'
 alias y='yazi'
 alias sys-update="sudo pacman -Syu"
+alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 
 #direnv
 eval "$(direnv hook zsh)"
