@@ -16,7 +16,7 @@ local function create_terminal(opts)
   end
 
   local win_config = {
-    height = math.floor(vim.o.lines * 0.25),
+    height = math.floor(vim.o.lines * 0.30),
     style = "minimal",
     split = "below",
     win = -1,

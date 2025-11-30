@@ -23,6 +23,7 @@ return {
         "liquid",
         "graphql",
         "embedded_template",
+        "toml",
       },
     },
   },
