@@ -144,7 +144,7 @@ bindsym F12 exec ~/.local/bin/change-audio-output.sh
 #
 # Screenshot
 #
-bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | satty --filename - --output-filename ~/Pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png --early-exit --actions-on-enter save-to-clipboard
+bindsym Ctrl+Shift+4 exec grim -g "$(slurp)" - | satty --filename - --output-filename ~/Pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png --actions-on-enter save-to-clipboard
 
 #
 # Resizing containers
