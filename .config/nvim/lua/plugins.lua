@@ -24,6 +24,7 @@ return {
         "graphql",
         "embedded_template",
         "toml",
+        "python",
       },
     },
   },
@@ -46,6 +47,8 @@ return {
         jsonc = { "prettier" },
         javascript = { "prettier" },
         typescript = { "prettier" },
+        python = { "isort", "black" },
+        sql = { "sqlfmt", "pg_format" },
       },
 
       format_on_save = {

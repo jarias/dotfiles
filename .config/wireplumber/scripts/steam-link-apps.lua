@@ -2,8 +2,8 @@ local lutils = require("linking-utils")
 local log = Log.open_topic("s-linking")
 
 SimpleEventHook({
-	name = "linking/sample-find-user-target",
-	before = "linking/find-defined-target",
+	name = "linking/steam-games-find-user-target",
+	before = "linking/prepare-link",
 	interests = {
 		EventInterest({
 			Constraint({ "event.type", "=", "select-target" }),
@@ -28,7 +28,7 @@ SimpleEventHook({
 				local steam_link_stream_node = om:lookup(steam_link_stream_node_constraints)
 				if steam_link_stream_node then
 					local null_sink_node_constraint = {
-						Constraint({ "node.name", "equals", "default_null_sink" }),
+						Constraint({ "node.name", "=", "default_null_sink" }),
 						Constraint({ "media.class", "=", "Audio/Sink" }),
 					}
 

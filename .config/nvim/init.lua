@@ -28,6 +28,7 @@ local lsp_servers = {
   "go",
   "rust",
   "templ",
+  "python",
 }
 
 for _, server in next, lsp_servers do
