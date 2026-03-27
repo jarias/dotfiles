@@ -27,3 +27,5 @@ map <leader>im <Action>(ImplementMethods)
 map <leader>om <Action>(OverrideMethods)
 
 map <leader>sr <Action>(SurroundWith)
+
+map <leader>bp <Action>(CompileDirty)

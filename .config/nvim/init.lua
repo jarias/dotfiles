@@ -34,3 +34,5 @@ local lsp_servers = {
 for _, server in next, lsp_servers do
   vim.lsp.enable(server)
 end
+
+vim.notify = require("notify")

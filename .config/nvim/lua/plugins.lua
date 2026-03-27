@@ -60,6 +60,12 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "v0.1.9",
+    opts = {
+      defaults = {
+        path_display = { "shorten" },
+        preview = false,
+      },
+    },
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
@@ -110,4 +116,12 @@ return {
     "nvim-telescope/telescope-ui-select.nvim",
     opts = {},
   },
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+  },
+  { "rcarriga/nvim-notify", opts = {
+    top_down = false,
+  } },
 }

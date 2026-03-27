@@ -1,6 +1,32 @@
 return {
   cmd = { "kotlin-lsp", "--stdio" },
   filetypes = { "kotlin" },
+  settings = {
+    jetbrains = {
+      kotlin = {
+        hints = {
+          lambda = { receivers = { parameters = true } },
+          type = {
+            ["function"] = { parameter = true, ["return"] = true },
+          },
+          parameters = true,
+          ["parameters.compiled"] = true,
+          ["parameters.excluded"] = true,
+          settings = {
+            types = { property = true, variable = true },
+            lambda = { ["return"] = true },
+            value = {
+              ranges = true,
+            },
+          },
+          call = { chains = true },
+        },
+      },
+    },
+  },
+  on_attach = function(client, bufnr)
+    vim.lsp.inlay_hint.enable(true)
+  end,
   root_markers = {
     {
       "settings.gradle", -- Gradle (multi-project)

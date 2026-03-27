@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=SCManager
+Exec=/usr/lib/SCMiddleware/SCManager
+Icon=/usr/share/SCMiddleware/application.png
