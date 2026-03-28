@@ -1,5 +1,5 @@
 return {
-  cmd = { "kotlin-lsp", "--stdio" },
+  cmd = { "kotlin-lsp", "--stdio", "--log-level", "DEBUG" },
   filetypes = { "kotlin" },
   settings = {
     jetbrains = {
