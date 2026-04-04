@@ -1,4 +1,5 @@
 -- Utility functions shared between progress reports for LSP and DAP
+--[[
 
 local client_notifs = {}
 
@@ -48,6 +49,10 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
 
   local val = result.value
 
+  if val.title ~= nil and string.match(val.title, "lint") then
+    return
+  end
+
   if not val.kind then
     return
   end
@@ -75,9 +80,11 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
     notif_data.notification = vim.notify(val.message and format_message(val.message) or "Complete", "info", {
       icon = "",
       replace = notif_data.notification,
-      timeout = 3000,
+      timeout = 2000,
     })
 
     notif_data.spinner = nil
   end
 end
+]]
+--

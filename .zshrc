@@ -70,7 +70,7 @@ function _history_substring_search_config() {
 }
 
 function randp() {
-  LC_ALL=C tr -dc A-Z-a-z-0-9 < /dev/urandom | head -c${1:-32}
+  tr -cd '[:graph:]' < /dev/urandom | head -c${1:-32}
 }
 
 # Aliases
