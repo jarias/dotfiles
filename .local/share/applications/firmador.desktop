@@ -1,5 +1,6 @@
 [Desktop Entry]
 Exec=/usr/bin/java -jar /opt/firmador/firmador.jar
+Icon=/opt/firmador/digital-signature.png
 Version=1.0
 Type=Application
 Name=Firmador Digital
