@@ -6,7 +6,7 @@ set $down j
 set $up k
 set $right l
 
-set $term /usr/bin/kitty
+set $term /usr/bin/ghostty
 set $menu walker
 
 ### Key bindings
