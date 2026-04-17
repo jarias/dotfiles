@@ -1,0 +1,2 @@
+yabai -m config layout bsp
+yabai -m config window_gap 5
