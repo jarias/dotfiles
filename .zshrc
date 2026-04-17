@@ -69,9 +69,14 @@ function _history_substring_search_config() {
   bindkey -M vicmd 'j' history-substring-search-down
 }
 
+# Shell funcitons
+
 function randp() {
   tr -cd '[:graph:]' < /dev/urandom | head -c${1:-32}
 }
+
+compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
+alias decompress="tar -xzf"
 
 # Aliases
 alias cd="z"

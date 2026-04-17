@@ -1,10 +1,10 @@
 font-family = CaskaydiaCove Nerd Font
-font-size = 15.0
+font-size   = 15.0
 
-cursor-style = block
+cursor-style            = block
 adjust-cursor-thickness = 1
 
-theme = Dracula
+theme              = Dracula
 background-opacity = 0.96
 
 gtk-titlebar = false
@@ -12,9 +12,15 @@ gtk-titlebar = false
 keybind = ctrl+shift+[=goto_split:previous
 keybind = ctrl+shift+]=goto_split:next
 keybind = ctrl+shift+enter=new_split:down
+keybind = ctrl+shift+|=new_split:right
 keybind = ctrl+shift+z=toggle_split_zoom
 keybind = ctrl+shift+h=previous_tab
 keybind = ctrl+shift+l=next_tab
 
 app-notifications = no-clipboard-copy
-resize-overlay = never
+resize-overlay    = never
+
+working-directory                = home
+window-inherit-working-directory = false
+tab-inherit-working-directory    = false
+split-inherit-working-directory  = false
