@@ -3,9 +3,11 @@ export ANDROID_HOME=$HOME/Android/sdk
 
 export PATH="$PATH:$HOME/.poetry/bin:$HOME/.local/bin"
 export PATH="$PATH:/home/jarias/.local/share/JetBrains/Toolbox/scripts"
-if [[ "$OSTYPE" == "darwin"* ]]; then
+
+if [[ "$OSTYPE" != "darwin"* ]]; then
   export PATH="$(gem env user_gemhome)/bin:$PATH"
 fi
+
 export PATH="$HOME/.dotnet:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$PATH:${ANDROID_HOME}/emulator"
