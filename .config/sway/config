@@ -19,9 +19,9 @@ bindsym $mod+Return exec uwsm-app -- $term
 bindsym $mod+Shift+q kill
 
 # Start walker menus
-bindsym $mod+p exec uwsm-app -- $menu -m "desktopapplications"
-bindsym $mod+Shift+p exec uwsm-app -- $menu -m "menus:pass"
-bindsym $mod+Shift+e exec uwsm-app -- $menu -m "menus:power"
+bindsym $mod+p exec uwsm-app -- env GSK_RENDERER=cairo $menu -m "desktopapplications"
+bindsym $mod+Shift+p exec uwsm-app -- env GSK_RENDERER=cairo $menu -m "menus:pass"
+bindsym $mod+Shift+e exec uwsm-app -- env GSK_RENDERER=cairo $menu -m "menus:power"
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
