@@ -138,3 +138,9 @@ export STARSHIP_CONFIG=${XDG_CONFIG_HOME}/starship/starship.toml
 eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh)"
+
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+fi
+
+source <(fzf --zsh)
