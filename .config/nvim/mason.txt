@@ -1,0 +1,12 @@
+black
+gopls
+isort
+kotlin-lsp
+lua-language-server
+pgformatter
+python-lsp-server
+shfmt
+sqlfmt
+stylua
+tree-sitter-cli
+typescript-language-server
