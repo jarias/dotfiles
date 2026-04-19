@@ -118,6 +118,12 @@ alias y='yazi'
 alias sys-update="sudo pacman -Syu"
 alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 
+#homebrew
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+#homebrew end
+
 #direnv
 eval "$(direnv hook zsh)"
 #direnv end
