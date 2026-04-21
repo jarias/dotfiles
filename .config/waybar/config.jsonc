@@ -1,7 +1,5 @@
 [
   {
-    "height": 41,
-    "spacing": 4,
     "output": ["DP-1", "eDP-1"],
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": [],
@@ -17,12 +15,12 @@
       "tooltip-format": "{app}: {title}",
     },
     "tray": {
-      "icon-size": 21,
       "spacing": 10,
       "show-passive-items": false,
     },
     "clock": {
       "format": "{:%d/%m/%Y %I:%M %p}",
+      "tooltip": false,
     },
     "pulseaudio": {
       "format": "{volume}% {icon}  {format_source}",
@@ -44,8 +42,6 @@
     },
   },
   {
-    "height": 41,
-    "spacing": 4,
     "output": "HDMI-A-1",
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": [],
@@ -62,6 +58,7 @@
     },
     "clock": {
       "format": "{:%d/%m/%Y %I:%M %p}",
+      "tooltip": false,
     },
   },
 ]

@@ -16,6 +16,7 @@ return {
         "java",
         "kotlin",
         "json",
+        "jsonc",
         "sql",
         "rust",
         "javascript",
@@ -49,6 +50,7 @@ return {
         typescript = { "prettier" },
         python = { "isort", "black" },
         sql = { "sqlfmt", "pg_format" },
+        css = { "prettier" },
       },
 
       format_on_save = {
