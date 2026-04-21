@@ -14,8 +14,10 @@ window#waybar {
   border-radius: 5px;
 }
 
-.horizontal {
-  padding: 2px;
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 5px;
 }
 
 window#waybar.hidden {
@@ -24,6 +26,7 @@ window#waybar.hidden {
 
 #workspaces {
   background-color: transparent;
+  padding: 0;
 }
 
 #workspaces button {
@@ -32,7 +35,10 @@ window#waybar.hidden {
   background-color: #44475a;
   color: #cdd6f4;
   margin-right: 5px;
-  padding: 5px 10px;
+}
+
+#workspaces button label {
+  padding: 2px;
 }
 
 #workspaces button.focused {
