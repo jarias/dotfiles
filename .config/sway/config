@@ -175,10 +175,11 @@ mode "resize" {
 #
 # Misc config
 #
+default_floating_border none
 default_border pixel 2
-client.focused "#6272A4" "#6272A4" "#F8F8F2" "#6272A4"
+client.focused "#5f5faf" "#5f5faf" "#ffffff" "#5f5faf"
 focus_follows_mouse no
-gaps inner 5
+#gaps inner 5
 set $gnome-schema org.gnome.desktop.interface
 
 #
