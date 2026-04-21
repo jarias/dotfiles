@@ -184,6 +184,7 @@ set $gnome-schema org.gnome.desktop.interface
 #
 # Window rules
 #
+for_window [title="wiremix"] floating enable
 for_window [title="^Android Emulator -*"] floating enable
 for_window [app_id="thunar" title="File Operation Progress"] floating enable
 for_window [app_id="cemu" title="Title Manager"] floating enable
