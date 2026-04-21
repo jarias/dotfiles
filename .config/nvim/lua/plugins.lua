@@ -20,6 +20,7 @@ return {
         "sql",
         "rust",
         "javascript",
+        "typescript",
         "hcl",
         "liquid",
         "graphql",

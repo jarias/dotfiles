@@ -12,6 +12,7 @@ require("ibl").setup()
 
 require("telescope").load_extension("ui-select")
 
+vim.notify = require("notify")
 vim.cmd.colorscheme("dracula")
 vim.cmd.highlight({ "WinSeparator", "guibg=None" })
 vim.cmd.highlight({ "WinSeparator", "guifg=#44475A" })
@@ -35,4 +36,25 @@ for _, server in next, lsp_servers do
   vim.lsp.enable(server)
 end
 
-vim.notify = require("notify")
+local mason_tools = {
+  "black",
+  "gopls",
+  "isort",
+  "kotlin-lsp",
+  "lua-language-server",
+  "pgformatter",
+  "python-lsp-server",
+  "shfmt",
+  "sqlfmt",
+  "stylua",
+  "tree-sitter-cli",
+  "typescript-language-server",
+}
+
+for _, tool in next, mason_tools do
+  local mason_registry = require("mason-registry")
+
+  if not mason_registry.is_installed(tool) then
+    vim.cmd({ cmd = "MasonInstall", args = { tool } })
+  end
+end

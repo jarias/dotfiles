@@ -1,34 +1,27 @@
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "templ",
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
+local file_types = {
+  "templ",
+  "css",
+  "java",
+  "kotlin",
+  "toml",
+  "lua",
+  "json",
+  "jsonc",
+  "sh",
+  "go",
+  "python",
+  "sql",
+  "html",
+  "javascript",
+  "typescript",
+}
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "go",
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
+for _, ft in next, file_types do
+  vim.api.nvim_create_autocmd("FileType", {
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "toml",
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "kotlin",
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "jsonc",
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
+    pattern = ft,
+    callback = function()
+      vim.treesitter.start()
+    end,
+  })
+end
