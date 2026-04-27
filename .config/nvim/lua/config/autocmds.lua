@@ -7,7 +7,6 @@ local file_types = {
   "lua",
   "json",
   "jsonc",
-  "sh",
   "go",
   "python",
   "sql",

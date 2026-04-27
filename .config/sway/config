@@ -6,7 +6,7 @@ set $down j
 set $up k
 set $right l
 
-set $term /usr/bin/ghostty
+set $term /usr/bin/ghostty +new-window
 set $menu walker
 
 ### Key bindings
